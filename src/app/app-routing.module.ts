@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+//importar modulos
+import { HomeComponent } from './pages/home/home.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'login', component: HomeComponent },
+  { path: 'registro', component: RegistroComponent },
+  { path: 'home', component: HomeComponent },
+
+  { path: '', component: HomeComponent },
+  { path: '**', component: HomeComponent } //Not found 404
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
