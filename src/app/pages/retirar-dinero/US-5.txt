@@ -1,0 +1,7 @@
+Historia de usuario: Como usuario quiero retirar dinero, con distintos medios y alternativas de acreditación.
+
+Criterio de aceptación: Probar retirar dinero desde distintos métodos. Validar retiro si existe saldo positivo. En caso contrario emitir advertencia.
+
+Descripción de la tarea:Realizar el formulario para retiro de dinero .El mismo va consistir en realizar validaciones correspondiente .Generar un campo con el monto a retirar y un menú desplegable para indicar el medio
+
+Estimación: 8

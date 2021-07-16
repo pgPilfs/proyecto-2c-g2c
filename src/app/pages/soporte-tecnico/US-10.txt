@@ -1,0 +1,7 @@
+Historia de usuario: Como usuario quiero tener un soporte seguro y personalizado para hacer consultas y trámites.
+
+Criterio de aceptación: Brindar datos del contacto de soporte técnico cuando el usuario lo solicite.
+
+Descripción de la tarea: Crear un vista de soporte y mostrar información de contacto de soporte.
+
+Estimación: 3

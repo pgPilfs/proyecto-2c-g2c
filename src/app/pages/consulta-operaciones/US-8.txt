@@ -1,0 +1,7 @@
+Historia de usuario: Como usuario quiero una sección donde pueda revisar mis operaciones para tener seguimiento de mi dinero.
+
+Criterio de aceptación: Probar la consulta de operaciones para llevar el control de los últimos seguimientos de mi billetera. Me deberá mostrar la fecha y hora de los movimientos. Especificar el tipo de movimiento, ingreso, retiro, transferencia, etc.
+
+Descripción de la tarea: Se debe realizar una tabla con los datos especificados y agregar botones de operaciones
+
+Estimación: 13
