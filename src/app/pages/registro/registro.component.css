@@ -1,0 +1,14 @@
+input[type="number"]
+{
+    -webkit-appearance: textfield !important;
+    margin: 0;
+    -moz-appearance:textfield !important;
+}
+.bg{
+    height: 100vh;
+    background-image: url(./img/fondo.png); 
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;  
+}
+
