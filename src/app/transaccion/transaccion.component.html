@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 mx-auto">
+            <div class="card_transferencia mt-5 mb-5">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h1 class="card-title pb-3">Transferencia</h1>
+                        <form [formGroup]="transferForm" (ngSubmit)="enviar(transferForm.value)">
+                            <div class="form-row">
+
+                                <!--Campo nombre-->
+                                <div class="form-group col-md-6">
+                                    <label>Nombre completo</label>
+                                    <input class="form-control" type="text" formControlName="nombre"
+                                        placeholder="Nombre" />
+
+                                    <!--Validaciones nombre-->
+                                    <div class="text-danger"
+                                        *ngIf="transferForm.get('nombre').hasError('required') && transferForm.get('nombre').touched">
+                                        El nombre es necesario
+                                    </div>
+
+                                </div>
+
+                                <!--Campo DNI/Cuit o Cuil-->
+                                <div class="form-group col-md-6">
+                                    <label>DNI/CUIL/CUIT</label>
+                                    <input class="form-control" type="number" formControlName="dni" placeholder="DNI" />
+
+                                    <!--Validaciones del campo DNI-->
+                                    <div class="text-danger"
+                                        *ngIf="transferForm.get('dni').hasError('required') && transferForm.get('dni').touched">
+                                        Ingrese DNI, CUIT o CUIL
+                                    </div>
+
+                                    <!--Validacion numero minimo '0'-->
+                                    <div class="text-danger" *ngIf="transferForm.get('dni').hasError('min')">
+                                        Ingrese un DNI valido
+                                    </div>
+
+                                    <!--Dicha validacion no funciona, verifica que minimo sean 4 caracteres-->
+                                    <div class="text-danger" *ngIf="transferForm.get('dni').hasError('minlength') ">
+                                        Ingrese un DNI
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="form-row">
+                                <!--Campo CBU-->
+                                <div class="form-group col-md-6">
+                                    <label>CBU/CVU/ALIAS</label>
+                                    <input class="form-control" formControlName="cbu" type="number" />
+
+                                    <!--Validacion CBU requerido-->
+                                    <div class="text-danger"
+                                        *ngIf="transferForm.get('cbu').hasError('required') && transferForm.get('cbu').touched ">
+                                        El CBU es necesario
+                                    </div>
+
+                                    <div class="text-danger"
+                                        *ngIf="transferForm.get('cbu').hasError('min')">
+                                        Ingrese en CBU valido 
+                                    </div>
+
+                                </div>
+
+
+                                <!--Campo monto-->
+                                <div class=" form-group col-md-6">
+                                    <label>Dinero a transferir</label>
+                                    <input class="form-control" type="number" formControlName="monto"
+                                        placeholder="Monto" />
+                                        
+                                        <!--Validaciones dinero requerido-->
+                                    <div class="text-danger"
+                                        *ngIf="transferForm.get('monto').hasError('required') && transferForm.get('monto').touched ">
+                                        El monto es necesario
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <!--Campo Email-->
+                            <label>Mail del destinatario</label>
+                            <input class="form-control" type="email" formControlName="mail" placeholder="E-mail" />
+                            
+                            <!--Validaciones mail requerido-->
+                            <div class="text-danger" *ngIf="transferForm.get('mail').hasError('required') && transferForm.get('mail').touched ">
+                                 El mail es necesario
+                                </div>
+                            <br>
+
+                            <!--Campo Motivo-->
+                            <div class="form-group">
+                                <label>Motivo</label>
+                                <select class="form-control" aria-label="Default select example" required>
+                                    <option>Varios</option>
+                                    <option>Expensas</option>
+                                    <option>Alquiler</option>
+                                </select>
+                            </div>
+
+                            <!--Campo Boton-->
+                            <button class="btn btn-primary mt-2" [disabled]="transferForm.invalid">Transferir</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

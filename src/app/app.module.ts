@@ -8,11 +8,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { LayoutModule } from './layout/layout.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TransaccionComponent } from './transaccion/transaccion.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    RegistroComponent
+    RegistroComponent,
+    TransaccionComponent
   ],
   imports: [
     BrowserModule,
