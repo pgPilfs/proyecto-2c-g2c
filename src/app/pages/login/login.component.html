@@ -1,0 +1,28 @@
+<div class="container">  
+    <div class="main-div">
+        <div class="panel">
+       
+       </div>
+<div class="login">
+  <form [formGroup]="signupForm" class="custom-form" (ngSubmit)="enviar(signupForm.value)">
+    <h1>Login</h1>
+    
+       <p>Please enter your email and password</p>
+       <input formControlName="usuario" type="text"> 
+       <div class="text-danger" *ngIf="signupForm.get('usuario').hasError('required') && signupForm.get('usuario').touched">Ingrese el usuario</div>
+    <div *ngIf="signupForm.get('usuario').hasError('minlength')">Cantidad minima de caracteres es 4</div>
+       <input formControlName="password" type="text"> 
+       <div class="text-danger" *ngIf="signupForm.get('password').hasError('required') && signupForm.get('password').touched">Ingrese la contraseña</div>
+    <div *ngIf="signupForm.get('password').hasError('minlength')">Cantidad minima de caracteres es 6</div>
+       
+    <button [disabled]="signupForm.invalid">Enviar</button>
+      
+  </form>
+</div>
+</div>
+</div>
+
+
+   
+   
+    
