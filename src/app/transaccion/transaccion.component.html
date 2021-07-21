@@ -1,3 +1,4 @@
+<div class="bg">
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 mx-auto">
@@ -14,33 +15,31 @@
                                     <input class="form-control" type="text" formControlName="nombre"
                                         placeholder="Nombre" />
 
-                                    <!--Validaciones nombre-->
+                                    <!--Validaciones nombre necesario-->
                                     <div class="text-danger"
                                         *ngIf="transferForm.get('nombre').hasError('required') && transferForm.get('nombre').touched">
                                         El nombre es necesario
                                     </div>
 
+                                    <!--Validacion Longitud del nombre-->
+                                    <div class="text-danger" *ngIf="transferForm.get('nombre').hasError('minlength')">
+                                        Ingrese nombre valido
+                                    </div>
                                 </div>
 
-                                <!--Campo DNI/Cuit o Cuil-->
+                                <!--Campo DNI-->
                                 <div class="form-group col-md-6">
-                                    <label>DNI/CUIL/CUIT</label>
+                                    <label>DNI</label>
                                     <input class="form-control" type="number" formControlName="dni" placeholder="DNI" />
-
                                     <!--Validaciones del campo DNI-->
                                     <div class="text-danger"
                                         *ngIf="transferForm.get('dni').hasError('required') && transferForm.get('dni').touched">
-                                        Ingrese DNI, CUIT o CUIL
+                                        El DNI necesario
                                     </div>
 
                                     <!--Validacion numero minimo '0'-->
                                     <div class="text-danger" *ngIf="transferForm.get('dni').hasError('min')">
                                         Ingrese un DNI valido
-                                    </div>
-
-                                    <!--Dicha validacion no funciona, verifica que minimo sean 4 caracteres-->
-                                    <div class="text-danger" *ngIf="transferForm.get('dni').hasError('minlength') ">
-                                        Ingrese un DNI
                                     </div>
 
                                 </div>
@@ -50,7 +49,7 @@
                             <div class="form-row">
                                 <!--Campo CBU-->
                                 <div class="form-group col-md-6">
-                                    <label>CBU/CVU/ALIAS</label>
+                                    <label>CBU/CVU</label>
                                     <input class="form-control" formControlName="cbu" type="number" />
 
                                     <!--Validacion CBU requerido-->
@@ -59,25 +58,33 @@
                                         El CBU es necesario
                                     </div>
 
-                                    <div class="text-danger"
-                                        *ngIf="transferForm.get('cbu').hasError('min')">
-                                        Ingrese en CBU valido 
+                                    <!--Validacion que solicita un dni valido-->
+                                    <div class="text-danger" *ngIf="transferForm.get('cbu').hasError('min')">
+                                        Ingrese en CBU valido
                                     </div>
 
                                 </div>
-
 
                                 <!--Campo monto-->
                                 <div class=" form-group col-md-6">
                                     <label>Dinero a transferir</label>
                                     <input class="form-control" type="number" formControlName="monto"
                                         placeholder="Monto" />
-                                        
-                                        <!--Validaciones dinero requerido-->
+
+                                    <!--Validaciones dinero requerido-->
                                     <div class="text-danger"
                                         *ngIf="transferForm.get('monto').hasError('required') && transferForm.get('monto').touched ">
                                         El monto es necesario
                                     </div>
+
+                                    <!--Validacion monto minimo-->
+                                    <div class="text-danger" *ngIf="transferForm.get('monto').hasError('min')">Ingrese
+                                        un monto valido</div>
+
+                                    <!--Validacion monto maximo a transaccionar-->
+                                    <div class="text-danger" *ngIf="transferForm.get('monto').hasError('max')">No se
+                                        puede transferir este monto. Consulte con atencion al cliente</div>
+
                                 </div>
                             </div>
                             <br>
@@ -85,11 +92,18 @@
                             <!--Campo Email-->
                             <label>Mail del destinatario</label>
                             <input class="form-control" type="email" formControlName="mail" placeholder="E-mail" />
-                            
+
                             <!--Validaciones mail requerido-->
-                            <div class="text-danger" *ngIf="transferForm.get('mail').hasError('required') && transferForm.get('mail').touched ">
-                                 El mail es necesario
-                                </div>
+                            <div class="text-danger"
+                                *ngIf="transferForm.get('mail').hasError('required') && transferForm.get('mail').touched ">
+                                El mail es necesario
+                            </div>
+
+                            <!--Validacion formato mail-->
+                            <div class="text-danger"
+                                *ngIf="transferForm.get('mail').hasError('email') && transferForm.get('mail').touched">
+                                Ingrese un mail valido
+                            </div>
                             <br>
 
                             <!--Campo Motivo-->
@@ -103,7 +117,7 @@
                             </div>
 
                             <!--Campo Boton-->
-                            <button class="btn btn-primary mt-2" [disabled]="transferForm.invalid">Transferir</button>
+                            <button class="btn btn-primary" [disabled]="transferForm.invalid">Transferir</button>
 
                         </form>
                     </div>
@@ -111,4 +125,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
