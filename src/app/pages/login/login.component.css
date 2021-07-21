@@ -1,14 +1,13 @@
-* {
-  box-sizing: border-box;
+.login{
+  min-height: 100vh;
+  height: auto;
+  background-image: url(../registro/img/fondo.png); 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
-html,
-body {
-  background: #ecf0f3;
-}
-h1 {
-  margin: 0;
-  padding: 0;
-}
+
 .custom-form {
   min-width: 300px;
   max-width: 60%;
@@ -17,7 +16,6 @@ h1 {
   padding: 2rem 3rem;
   margin: auto;
   border-radius: 2.5rem;
-  background-color: #ecf0f3;
   box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
   color: black;
   margin-top: 0px;
@@ -41,7 +39,7 @@ h1 {
   font-size: 0.875rem;
   color: black;
   font-weight: bold;
-  background-color: #ff9900;
+  background-color: #EB7329;
   width: 100%;
   display: block;
   padding: 0.875rem 1rem;
@@ -51,12 +49,14 @@ h1 {
 }
 
 .main-div {
-  background: #ffffff none repeat scroll 0 0;
   border-radius: 2px;
-  margin: 10px auto 30px;
-  max-width: 38%;
-  padding: 0px;
+  margin: auto;
+  width: 50%;
+  padding-top: 5rem;
   text-align: center;
+}
 
+h1, p{
+  color: #ffffff;
 }
 
