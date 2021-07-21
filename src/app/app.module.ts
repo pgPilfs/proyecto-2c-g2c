@@ -9,12 +9,15 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { LayoutModule } from './layout/layout.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TransaccionComponent } from './transaccion/transaccion.component';
+import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegistroComponent,
-    TransaccionComponent
+    TransaccionComponent,
+    PagBienvenidaComponent,
   ],
   imports: [
     BrowserModule,
