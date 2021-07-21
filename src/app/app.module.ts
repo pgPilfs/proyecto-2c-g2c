@@ -10,6 +10,8 @@ import { LayoutModule } from './layout/layout.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TransaccionComponent } from './transaccion/transaccion.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
+import { LoginComponent } from './pages/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.co
     RegistroComponent,
     TransaccionComponent,
     PagBienvenidaComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
