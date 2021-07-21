@@ -6,9 +6,10 @@ input[type="number"]
 }
 .bg{
     height: 100vh;
-    background-image: url(./img/fondo.png); 
+    background-image: url(./img/descarga.jpg); 
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: center center;
+    background-attachment: fixed;
     background-size: cover;  
 }
 
