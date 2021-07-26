@@ -30,5 +30,6 @@ export class TransaccionComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
 }
