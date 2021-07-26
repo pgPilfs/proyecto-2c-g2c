@@ -5,10 +5,12 @@ input[type="number"]
     -moz-appearance:textfield !important;
 }
 .bg{
-    height: 100vh;
-    background-image: url(./img/fondo.png); 
+    min-height: 100vh;
+    height: auto;
+    background-image: url(./img/descarga.jpg); 
     background-repeat: no-repeat;
-    background-position: left center;
-    background-size: cover;  
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
