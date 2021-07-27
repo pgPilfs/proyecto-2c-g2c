@@ -85,6 +85,9 @@
                                     <div class="text-danger" *ngIf="transferForm.get('monto').hasError('max')">No se
                                         puede transferir este monto. Consulte con atencion al cliente</div>
 
+                                    <!--Validacion que el monto a transferir tengamos disponibles en nuestro saldo-->
+                                    <div class="text-danger" *ngIf="excedeSaldo">{{textoIncorrecto}}</div>
+                                
                                 </div>
                             </div>
                             <br>
@@ -117,7 +120,7 @@
                             </div>
 
                             <!--Campo Boton-->
-                            <button class="btn btn-primary" [disabled]="transferForm.invalid">Transferir</button>
+                            <button class="btn btn-primary mt-2 mb-2" [disabled]="transferForm.invalid" (click)="validarCantidad()">Transferir</button>
 
                         </form>
                     </div>

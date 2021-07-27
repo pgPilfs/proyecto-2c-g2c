@@ -7,7 +7,7 @@ input[type="number"]
 .bg{
     min-height: 100vh;
     height: auto;
-    background-image: url(./img/descarga.jpg); 
+    background-image: url(./img/fondo.png); 
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;

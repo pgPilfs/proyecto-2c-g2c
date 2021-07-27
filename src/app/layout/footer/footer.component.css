@@ -7,11 +7,14 @@
     padding-top: 2rem;
 }
 
-.social-list li {
+.social-list a {
     padding: 10px;
     color: #EB7329;
-    font-size: 19px
+    font-size: 19px;
+    text-decoration: none; 
 }
 
-.social-list li:hover {
-    transform: scale(1.5);}
+.social-list a:hover {
+    transform: scale(1.5);
+    cursor: pointer; 
+}
