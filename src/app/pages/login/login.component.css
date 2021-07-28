@@ -16,36 +16,33 @@
   padding: 2rem 3rem;
   margin: auto;
   border-radius: 2.5rem;
-  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
-  color: black;
+    color: black;
   margin-top: 0px;
 }
 .custom-form input {
   display: block;
-  margin: 2rem 0;
+  margin: 1rem 0;
   width: 100%;
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.6rem;
   border: none;
-  box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px
-      rgba(0, 0, 0, 0.1);
   border: 0 none;
-  background: #ebf5fc;
+  background: rgba(255, 255, 255, 0.1);
 }
-.custom-form button {
+.button {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   border: none;
   font-size: 0.875rem;
-  color: black;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: bold;
   background-color: #EB7329;
   width: 100%;
   display: block;
   padding: 0.875rem 1rem;
   border-radius: 1.5rem;
-  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
   cursor: pointer;
+  margin-top: -0.5rem;
 }
 
 .main-div {
@@ -55,8 +52,19 @@
   padding-top: 5rem;
   text-align: center;
 }
-
-h1, p{
-  color: #ffffff;
+.p{
+  font-weight: 200;
 }
 
+h1, p{
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.4rem;
+}
+
+.registrarse{
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 1rem 0 0 0;
+  font-weight: bolder;
+}

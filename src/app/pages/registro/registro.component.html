@@ -6,8 +6,8 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
-                                <h1>REGISTRATE</h1>
-                                <p>Es simple, facil y gratis</p>
+                                <h1 class="m-2">Registrate</h1>
+                                <p class="mb-4">Es simple, facil y gratis</p>
                                 <!--Nombre-->
                                 <input formControlName="nombre" type="text" class="form-control input"
                                     placeholder="Nombre">
@@ -66,6 +66,17 @@
                                     *ngIf="signupForm.get('clave').hasError('minlength') && signupForm.get('clave').dirty && signupForm.get('clave').touched">
                                     Cantidad minima de caracteres es 6</div>
                                 <br>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                        Acepto los <a href="#">terminos y condiciones</a>
+                                    </label>
+                                </div>
+
+                                <div class="yaRegistrado">
+                                    <p>¿Ya estas registrado? <a routerLink="/registro">Iniciar sesión</a> </p>
+                                </div>
 
                                 <!--Boton Registrarse-->
                                 <button class="btn btn-primary" [disabled]="signupForm.invalid">Registrarme</button>
