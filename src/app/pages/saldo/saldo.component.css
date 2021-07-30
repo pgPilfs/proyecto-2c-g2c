@@ -1,0 +1,51 @@
+
+.card-body{
+    
+    border-radius:2.5rem;
+    background-color: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5));
+    
+ }
+
+ .fondo{
+    
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+           ),  
+           
+           url(./imag/cel.jpg);
+          
+           
+           background-size: cover;
+           object-fit: cover;
+  background-attachment: fixed;
+  margin: 0;
+        background-repeat: no-repeat;
+        
+        background-position: center;
+        min-height: 100vh;
+        width: 100% ;
+        
+        height: auto;
+    
+ }
+
+button{
+        background-color: #EB7329;
+        border: none;
+    margin: 10px;
+}
+
+
+nav item{
+    text-align: center;
+    
+}
+@media (max-width:480px){
+    form{
+        width: 100%;
+    }
+  }

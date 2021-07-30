@@ -8,13 +8,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { LayoutModule } from './layout/layout.module';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
+import { SaldoComponent } from './pages/saldo/saldo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     RegistroComponent,
-    PagBienvenidaComponent
+    PagBienvenidaComponent,
+    SaldoComponent
   ],
   imports: [
     BrowserModule,
