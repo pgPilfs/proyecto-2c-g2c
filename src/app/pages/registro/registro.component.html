@@ -1,13 +1,14 @@
 <div class="bg">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4 mx-auto">
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-5 mx-auto">
                 <div class="card_registro mt-5 mb-5">
                     <div class="card">
                         <div class="card-body text-center">
-                            <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
+                                <div class="logo"><img src="../assets/img/logo.png" alt=""></div>
+                            <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)"> 
                                 <h1 class="m-2">Registrate</h1>
-                                <p class="mb-4">Es simple, facil y gratis</p>
+                                <p class="mb-4">Es simple, facil y gratis</p> 
                                 <!--Nombre-->
                                 <input formControlName="nombre" type="text" class="form-control input"
                                     placeholder="Nombre">
@@ -75,7 +76,7 @@
                                 </div>
 
                                 <div class="yaRegistrado">
-                                    <p>¿Ya estas registrado? <a routerLink="/registro">Iniciar sesión</a> </p>
+                                    <p>¿Ya estas registrado? <a routerLink="/login">Iniciar sesión</a> </p>
                                 </div>
 
                                 <!--Boton Registrarse-->

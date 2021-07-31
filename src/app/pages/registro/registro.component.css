@@ -7,7 +7,7 @@ input[type="number"]
 .bg{
     min-height: 100vh;
     height: auto;
-    background-image: url(./img/fondo.png); 
+    background-image: url(./img/fono_registro.jpg);  
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -18,7 +18,6 @@ input[type="number"]
     background-color: rgba(245, 245, 245, 0.1);
     border-radius:2.5rem;
  }
-
  .card-body input{
      border: none;
      border-radius: 0.5rem;
@@ -63,3 +62,7 @@ input[type="number"]
 .yaRegistrado a:hover{
     color: rgb(206, 206, 206);
 }
+.logo{
+    margin: -3rem 0 -8rem 0;
+}
+

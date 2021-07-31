@@ -7,6 +7,7 @@ import { TransaccionComponent } from './transaccion/transaccion.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TransferenciasComponent } from './transferencias/transferencias.component';
+import { LoginTestComponent } from './login-test/login-test.component'
 
 const routes: Routes = [
   { path: 'bienvenida', component: PagBienvenidaComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'transaccion', component: TransaccionComponent},
   {path: 'transferencias',component: TransferenciasComponent},
+  {path: 'test', component: LoginTestComponent},
 
   { path: '', component: PagBienvenidaComponent },
   { path: '**', component: PagBienvenidaComponent } //Not found 404

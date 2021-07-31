@@ -10,7 +10,7 @@ import {Validators, FormGroup, FormBuilder} from '@angular/forms';
 export class RegistroComponent implements OnInit {
   
   
-  signupForm: FormGroup;
+  signupForm: FormGroup; 
 
 
   constructor(private formBuilder: FormBuilder) {

@@ -1,4 +1,4 @@
-<div class="bg">
+<div class="bg pt-5 pb-5">
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 mx-auto">
@@ -10,10 +10,10 @@
                             <div class="form-row">
 
                                 <!--Campo nombre-->
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-6"> 
                                     <label>Nombre completo</label>
                                     <input class="form-control" type="text" formControlName="nombre"
-                                        placeholder="Nombre" />
+                                        />
 
                                     <!--Validaciones nombre necesario-->
                                     <div class="text-danger"
@@ -30,7 +30,7 @@
                                 <!--Campo DNI-->
                                 <div class="form-group col-md-6">
                                     <label>DNI</label>
-                                    <input class="form-control" type="number" formControlName="dni" placeholder="DNI" />
+                                    <input class="form-control" type="number" formControlName="dni"/>
                                     <!--Validaciones del campo DNI-->
                                     <div class="text-danger"
                                         *ngIf="transferForm.get('dni').hasError('required') && transferForm.get('dni').touched">
@@ -64,12 +64,12 @@
                                     </div>
 
                                 </div>
+                                
 
                                 <!--Campo monto-->
                                 <div class=" form-group col-md-6">
                                     <label>Dinero a transferir</label>
-                                    <input class="form-control" type="number" formControlName="monto"
-                                        placeholder="Monto" />
+                                    <input class="form-control" type="number" formControlName="monto"/>
 
                                     <!--Validaciones dinero requerido-->
                                     <div class="text-danger"
@@ -94,7 +94,7 @@
 
                             <!--Campo Email-->
                             <label>Mail del destinatario</label>
-                            <input class="form-control" type="email" formControlName="mail" placeholder="E-mail" />
+                            <input class="form-control" type="email" formControlName="mail" />
 
                             <!--Validaciones mail requerido-->
                             <div class="text-danger"

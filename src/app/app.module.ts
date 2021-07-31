@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TransaccionComponent } from './transaccion/transaccion.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { LoginComponent } from './pages/login/login.component';
+import { LoginTestComponent } from './login-test/login-test.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { LoginComponent } from './pages/login/login.component';
     TransaccionComponent,
     PagBienvenidaComponent,
     LoginComponent,
+    LoginTestComponent,
   ],
   imports: [
     BrowserModule,
