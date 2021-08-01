@@ -1,33 +1,32 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Validators, FormGroup, FormBuilder} from '@angular/forms';
-
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+export class LoginComponent implements OnInit {
 
-  export class LoginComponent implements OnInit  {
-    signupForm: FormGroup;
-  
-         constructor(private formBuilder: FormBuilder) {
-      this.signupForm = this.formBuilder.group({
+  loginForm: FormGroup;
 
-        usuario: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-        password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-        
-      })
-    }
+  constructor(private formBuilder: FormBuilder) { 
+    this.loginForm = this.formBuilder.group({
 
-    ngOnInit(): void {
+      mail: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
 
-    }
-    enviar(values){
-      console.log(values);
-    }
-  
-    }
+    })
+  }
+
+  enviar(values){
+    console.log(values);
+  }
+
+  ngOnInit(): void {
+  }
+
+}
 
  /***
   * constructor(private fb: FormBuilder) {}

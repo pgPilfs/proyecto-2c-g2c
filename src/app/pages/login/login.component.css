@@ -1,62 +1,69 @@
-.login{
+.background{
   min-height: 100vh;
   height: auto;
-  background-image: url(../registro/img/fondo.png); 
-  background-repeat: no-repeat;
+  background-image: url(../registro/img/fondo.png);
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
 }
 
-.custom-form {
-  min-width: 300px;
-  max-width: 60%;
-  margin: 0px auto;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 2rem 3rem;
-  margin: auto;
+.card{
+  background-color: rgba(245, 245, 245, 0.1);
   border-radius: 2.5rem;
-  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
-  color: black;
-  margin-top: 0px;
 }
-.custom-form input {
-  display: block;
-  margin: 2rem 0;
-  width: 100%;
+.card_login{
+  margin: 10rem 0 0 0;
+}
+.card-body input{
+  border: none;
   border-radius: 0.5rem;
-  padding: 1rem;
-  border: none;
-  box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px
-      rgba(0, 0, 0, 0.1);
-  border: 0 none;
-  background: #ebf5fc;
-}
-.custom-form button {
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  border: none;
-  font-size: 0.875rem;
-  color: black;
-  font-weight: bold;
-  background-color: #EB7329;
-  width: 100%;
-  display: block;
-  padding: 0.875rem 1rem;
-  border-radius: 1.5rem;
-  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
-  cursor: pointer;
-}
-
-.main-div {
-  border-radius: 2px;
-  margin: auto;
-  width: 50%;
-  padding-top: 5rem;
+  background-color: rgba(255, 255, 255, 0.1);
   text-align: center;
+  color: white;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 h1, p{
-  color: #ffffff;
+  color: rgb(241, 241, 241);
 }
 
+::placeholder{
+  color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+  background-color: #EB7329;
+  border: none;
+  border-radius: 5rem;
+  padding: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+button:disabled{
+  background-color: #EB7329;
+}
+
+.p{
+  font-weight: 200;
+  margin-top: 1.8rem;
+}
+
+a{
+  font-weight: 600;
+  color: white;
+}
+a:hover{
+  cursor: pointer;
+}
+
+.pass{
+  margin-top: -0.7rem  
+}
+
+
+.btn{
+  margin-top: -0.6rem
+}
