@@ -1,6 +1,5 @@
-import { Component, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { LoginService } from 'src/app/login.service';
 import {filter} from 'rxjs/operators';
 
 @Component({
@@ -16,11 +15,11 @@ export class HeaderComponent implements OnInit {
   toggleMenu(res?: string) {
     this.isCollapsed = !this.isCollapsed;
     if(res){
-      this.login.logout();
+      // this.login.logout();
     }
   }
 
-  constructor(private login: LoginService, private router: Router) { 
+  constructor(private router: Router) { 
     // router.events.pipe(
     //   filter((event: any) => event instanceof NavigationEnd)
     // )

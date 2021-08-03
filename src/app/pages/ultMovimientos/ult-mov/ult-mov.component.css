@@ -1,0 +1,52 @@
+
+.card-body{
+    
+    border-radius:2.5rem;
+    background-color: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5));
+    
+ }
+
+ .card-body {
+    border-radius: 2.5rem;
+    background-color: linear-gradient(to right, rgba(0, 0, 0, 0.5));
+  }
+  
+  .fondo {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.699),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(../../../../assets/img/bg4.jpg);
+  
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    background-repeat: no-repeat;
+  
+    background-position: center;
+    min-height: 100vh;
+    width: 100%;
+  
+    height: auto;
+  }
+  
+  button {
+    background-color: #eb7329;
+    border: none;
+    margin: 10px;
+  }
+  
+  .nav-item{
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .card-header{
+        margin-top: 3rem;
+    }
+    p{
+        font-size: 6rem;
+    }
+  }

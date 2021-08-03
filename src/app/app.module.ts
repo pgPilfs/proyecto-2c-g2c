@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { LoginComponent } from './pages/login/login.component';
+import { UltMovComponent } from './pages/ultMovimientos/ult-mov/ult-mov.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { LoginComponent } from './pages/login/login.component';
     TransferenciaComponent,
     PagBienvenidaComponent,
     LoginComponent,
+    UltMovComponent,
   ],
   imports: [
     BrowserModule,
