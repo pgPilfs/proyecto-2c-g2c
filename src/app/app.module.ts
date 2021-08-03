@@ -8,7 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { LayoutModule } from './layout/layout.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TransaccionComponent } from './transaccion/transaccion.component';
+import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { LoginComponent } from './pages/login/login.component';
 
@@ -18,7 +18,7 @@ import { LoginComponent } from './pages/login/login.component';
     AppComponent,
     HomeComponent,
     RegistroComponent,
-    TransaccionComponent,
+    TransferenciaComponent,
     PagBienvenidaComponent,
     LoginComponent,
   ],

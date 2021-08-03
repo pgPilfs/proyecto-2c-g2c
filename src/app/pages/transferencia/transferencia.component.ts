@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder} from '@angular/forms';
 
 @Component({
-  selector: 'app-transaccion',
-  templateUrl: './transaccion.component.html',
-  styleUrls: ['./transaccion.component.css']
+  selector: 'app-transferencia',
+  templateUrl: './transferencia.component.html',
+  styleUrls: ['./transferencia.component.css']
 })
-export class TransaccionComponent implements OnInit {
+export class TransferenciaComponent implements OnInit {
 
   transferForm: FormGroup;
 
