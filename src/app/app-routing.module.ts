@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 //importar modulos
 import { HomeComponent } from './pages/home/home.component';
 import { RegistroComponent } from './pages/registro/registro.component';
-import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { LoginComponent } from './pages/login/login.component';
+import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
+import { UltMovComponent } from './pages/ultMovimientos/ult-mov/ult-mov.component';
+
 
 const routes: Routes = [
   { path: 'bienvenida', component: PagBienvenidaComponent},
@@ -13,6 +15,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'home', component: HomeComponent },
   { path: 'transferencia', component: TransferenciaComponent},
+  { path: 'saldo', component: UltMovComponent},
 
 
   { path: '', component: PagBienvenidaComponent },

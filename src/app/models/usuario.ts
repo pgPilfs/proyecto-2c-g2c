@@ -14,6 +14,6 @@ export const usuarios: Usuario[] = [
         dni: 35260152,
         usuario: "merypopins",
         clave: "perrodogi",
-        mail: "marian_1490_1@hotmail.com"
+        mail: "marian_1490_1@hotmail.com" //unico
     }
 ]

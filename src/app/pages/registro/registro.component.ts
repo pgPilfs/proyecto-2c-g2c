@@ -26,7 +26,6 @@ export class RegistroComponent implements OnInit {
 
   enviar(values: Usuario) {
     this.serv.registro(values);
-    console.log(usuarios);
   }
 
   ngOnInit(): void {

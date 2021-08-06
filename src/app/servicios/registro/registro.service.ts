@@ -7,23 +7,33 @@ import { Router } from '@angular/router';
 })
 export class RegistroService {
   clientes = usuarios;
+  registrado: boolean;
 
   constructor(private router: Router) { }
   registro(cliente: Usuario ){
-    console.log(cliente);
+    delete this.registrado;
     for(const usuario of this.clientes){
+      debugger
       if(usuario.mail === cliente.mail){
-        //mostrar mensaje pop-up de email encontrado, por favor loguearse
-        this.router.navigate(['/login'])
-        console.log("email encontrado")
-      }else{
-        this.clientes.push(cliente)
-        //mostrar mensaje pop-up de registro exitoso
-        this.router.navigate(['/login'])
-        console.log("email no encontrado")
+        this.registrado = true;
+        break
       }
     }
+
+    if(this.registrado){
+      //mostrar mensaje pop-up de email encontrado, por favor loguearse
+      // this.router.navigate(['/login'])
+      console.log("email encontrado")
+    }else{
+      this.clientes.push(cliente);
+      //mostrar mensaje pop-up de registro exitoso
+      //no dirigir al login, diseñar una vista para que el cliente toque loguearse
+      console.log("email no encontrado");
+    }
+
+
   }
+
 }
 
 
