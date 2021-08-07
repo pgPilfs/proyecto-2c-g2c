@@ -3,7 +3,7 @@ import {Validators, FormGroup, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-contacto',
-  templateUrl: './contaco.component.html',
+  templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css']
 })
 
