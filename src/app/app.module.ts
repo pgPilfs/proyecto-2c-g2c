@@ -9,6 +9,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { LayoutModule } from './layout/layout.module';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { SaldoComponent } from './pages/saldo/saldo.component';
+import { CriptoComponent } from './pages/cripto/cripto.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SaldoComponent } from './pages/saldo/saldo.component';
     HomeComponent,
     RegistroComponent,
     PagBienvenidaComponent,
-    SaldoComponent
+    SaldoComponent,
+    CriptoComponent
   ],
   imports: [
     BrowserModule,

@@ -10,13 +10,13 @@
 
  .card-body {
     border-radius: 2.5rem;
-    background-color: linear-gradient(to right, rgba(0, 0, 0, 0.5));
+    background-color: linear-gradient(to right, rgba(1, 1, 1, 0.9));
   }
   
   .fondo {
     background-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.699),
+        rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
       ),
       url(./imag/cel.jpg);
