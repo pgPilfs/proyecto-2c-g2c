@@ -12,6 +12,7 @@ import { TransaccionComponent } from './transaccion/transaccion.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { PagoServiciosComponent } from './pago-servicios/pago-servicios.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ContactoComponent } from './contacto/contacto.component';
     PagBienvenidaComponent,
     LoginComponent,
     ContactoComponent,
+    PagoServiciosComponent,
   ],
   imports: [
     BrowserModule,
