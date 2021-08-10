@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TransaccionComponent } from './transaccion/transaccion.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { LoginComponent } from './pages/login/login.component';
-
+import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import { LoginComponent } from './pages/login/login.component';
     TransaccionComponent,
     PagBienvenidaComponent,
     LoginComponent,
+    ContactoComponent,
   ],
   imports: [
     BrowserModule,
