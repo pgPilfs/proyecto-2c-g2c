@@ -21,7 +21,7 @@ export class TransaccionComponent implements OnInit {
       dni: ['', Validators.compose([Validators.required, Validators.min(1000)])],
       mail: ['', Validators.compose([Validators.required, Validators.email])],
       monto: ['', Validators.compose([Validators.min(0), Validators.required, Validators.max(400000)])],
-      cbu: ['', Validators.compose([Validators.required, Validators.min(1000)])],
+      cbu: ['', Validators.compose([Validators.required, Validators.min(88888888)])],
       motivo: ['']
     })
    }

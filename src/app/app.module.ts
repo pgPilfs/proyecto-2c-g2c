@@ -12,6 +12,7 @@ import { TransaccionComponent } from './transaccion/transaccion.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginTestComponent } from './login-test/login-test.component';
+import { ConsultaSaldoComponent } from './pages/consulta-saldo/consulta-saldo.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { LoginTestComponent } from './login-test/login-test.component';
     PagBienvenidaComponent,
     LoginComponent,
     LoginTestComponent,
+    ConsultaSaldoComponent,
   ],
   imports: [
     BrowserModule,

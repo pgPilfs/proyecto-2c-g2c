@@ -53,7 +53,7 @@
                                     <input class="form-control" formControlName="cbu" type="number" />
 
                                     <!--Validacion CBU requerido-->
-                                    <div class="text-danger"
+                                    <div class="text-danger" 
                                         *ngIf="transferForm.get('cbu').hasError('required') && transferForm.get('cbu').touched ">
                                         El CBU es necesario
                                     </div>

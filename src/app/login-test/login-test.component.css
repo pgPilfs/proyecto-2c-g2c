@@ -10,6 +10,8 @@
 .card{
     background-color: rgba(245, 245, 245, 0.1);
     border-radius: 2.5rem;
+    margin-top: -3rem;
+    margin-bottom: 3rem
 }
 .card_login{
     margin: 10rem 0 0 0;
@@ -52,7 +54,7 @@ button:disabled{
   }
 
 a{
-    font-weight: 600;
+    font-weight: 500;
     color: white;
 }
 a:hover{

@@ -5,13 +5,13 @@
                 <div class="card_registro mt-5 mb-5">
                     <div class="card">
                         <div class="card-body text-center">
-                                <div class="logo"><img src="../assets/img/logo.png" alt=""></div>
-                            <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)"> 
+                            <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
                                 <h1 class="m-2">Registrate</h1>
-                                <p class="mb-4">Es simple, facil y gratis</p> 
+                                <p class="mb-4">Es simple, facil y gratis</p>
                                 <!--Nombre-->
                                 <input formControlName="nombre" type="text" class="form-control input"
                                     placeholder="Nombre">
+                                <!--Nombre validaciones-->
                                 <div class="text-danger"
                                     *ngIf="signupForm.get('nombre').hasError('required') && signupForm.get('nombre').touched">
                                     Ingrese el nombre
@@ -21,6 +21,7 @@
                                 <!--Apellido-->
                                 <input formControlName="apellido" type="text" class="form-control"
                                     placeholder="Apellido">
+                                <!--Apellido validaciones-->
                                 <div class="text-danger"
                                     *ngIf="signupForm.get('apellido').hasError('required') && signupForm.get('apellido').touched">
                                     Ingrese el
@@ -29,6 +30,7 @@
 
                                 <!--DNI-->
                                 <input formControlName="dni" type="number" class="form-control" placeholder="DNI">
+                                <!--DNI validaciones-->
                                 <div class="text-danger"
                                     *ngIf="signupForm.get('dni').hasError('required') && signupForm.get('dni').touched">
                                     El
@@ -38,9 +40,14 @@
 
                                 <!--Mail-->
                                 <input formControlName="mail" type="mail" class="form-control" placeholder="E-mail">
+                                <!--Mail validaciones-->
                                 <div class="text-danger"
                                     *ngIf="signupForm.get('mail').hasError('required') && signupForm.get('mail').touched">
                                     Introduzca un mail</div>
+
+                                <div class="text-danger"
+                                    *ngIf="signupForm.get('mail').hasError('email') && signupForm.get('mail').touched">
+                                    Ingrese un mail valido</div>
                                 <br>
 
                                 <!--Usuario-->
