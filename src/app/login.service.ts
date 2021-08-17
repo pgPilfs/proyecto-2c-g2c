@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment.prod'; 
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +15,13 @@ export class LoginService {
   login(username: string, password: string) { //función de logueo
   // return this.http.post(environment.baseUrlServices + '/login', { username: username, password: password })
   }
+  registro(email:string, dni: number){
+    
+  }
 
   logout() { //función de deslogueo
     this.router.navigate(["/login"]);
   }
 
 }
+  

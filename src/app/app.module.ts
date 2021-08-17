@@ -10,7 +10,6 @@ import { LayoutModule } from './layout/layout.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TransaccionComponent } from './transaccion/transaccion.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
-import { LoginComponent } from './pages/login/login.component';
 import { LoginTestComponent } from './login-test/login-test.component';
 import { ConsultaSaldoComponent } from './pages/consulta-saldo/consulta-saldo.component';
 
@@ -22,7 +21,6 @@ import { ConsultaSaldoComponent } from './pages/consulta-saldo/consulta-saldo.co
     RegistroComponent,
     TransaccionComponent,
     PagBienvenidaComponent,
-    LoginComponent,
     LoginTestComponent,
     ConsultaSaldoComponent,
   ],
