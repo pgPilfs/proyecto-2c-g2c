@@ -1,74 +1,60 @@
-
-span{
-    font-size:30px;
+span {
+    font-size: 30px;
     color: white;
 }
-a{
-  text-decoration:none; 
-  color: #0062cc;
-  border-bottom:2px solid #0062cc;
+
+a {
+    text-decoration: none;
+    color: #0062cc;
+    border-bottom: 2px solid #0062cc;
 }
-.box{
-    padding:60px 0px;
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.699),
-        rgba(0, 0, 0, 0.5)
-      ),
-      url(./img/coin.jpg);
-    
-  
+
+.box {
+    padding: 60px 0px;
+    background-image: linear-gradient( to right, rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.5)), url(./img/coin.jpg);
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
     background-repeat: no-repeat;
-  
     background-position: center;
     min-height: 100vh;
     width: 100%;
-  
     height: auto;
 }
 
-.box-part{
-    background:#FFF;
-    border-radius:0;
-    padding:60px 10px;
-    margin:30px 0px;
-    
-    
+.box-part {
+    background: #FFF;
+    border-radius: 0;
+    padding: 60px 10px;
+    margin: 30px 0px;
 }
-.text{
-    margin:20px;
-    
+
+.text {
+    margin: 20px;
 }
+
 button {
     background-color: #eb7329;
     border: none;
-   
-  }
-.title{
+}
+
+.title {
     color: white;
 }
-.text-dark{
+
+.text-dark {
     font-size: 25px;
 }
-.text-danger{
+
+.text-danger {
     font-size: 25px;
 }
-@media screen and (min-width: 991px) {
-    .media {
-        flex-direction: row;
-    }
-    .box-part{
+
+@media (min-width: 968px) {
+    .row {
         margin-top: 3rem;
     }
-}
-@media screen and (max-width: 991px) {
-    .media {
-        flex-direction: column;
-    }
-    .box.box-part{
-        margin-top: 5rem;
+    p {
+        font-size: 6rem;
     }
 }

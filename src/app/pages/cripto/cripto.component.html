@@ -1,113 +1,99 @@
 <div class="box">
-    <div class="container">
+    <div class="container">&nbsp;
+
+        <button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button>
         <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            
-               <div class="box-part text-center"  style="background-color: rgba(245, 245, 245, 0.4)">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAaRJREFUWEftl4FNxDAMRd9NACPABMAEwAQwAkwATABsABvABMAEcBvABrABTAD6KD5ZVXtxS9NWqJZO6jVN8mJ/O8mCidliYjzMQLmIdPXQAbCfBl8CL+m56X2OY9XeFegKuEyjXAP6L2t6//+BtPJvt0yFRj+ZwuVDZu9vgfOwa9KH0ZB5mDZzvAMXwGO0U2kg4zgF7iJQUSATrcY0MetZgq6zLeAY2HCN24A8ttaiQH4QH751/TeTtnZS53vgZEwgzS0vPSSIV2BvbCDNH/XoL2vJkFU99AbsjukhaejZQQyiIZ99fvGWZYKSfSWw4lmWi4C1+/2uaNpHgT6BQ0CZVhSoqTBqUgn4yM2ucKk4FgXKZamgtPFaxc5uIbkB61bTqq4AN8BZtFoPAaTjiNJfptOlHU9qQzcEkPfQU9pOGnVUGkgaknesHvWmIX9i9MWwqTBalmlzNfsAVDB7ybKuJ0abXJVa2umtDv0FSELW2ToLI/qohqqhidzLJGD1C4GYK6NA1bjP97JcMkTuZf6+lhtv1d41ZOEJ2n44A+U8NjkP/QDnM10lZki+egAAAABJRU5ErkJggg=="/>                 
-                   <div class="title">
-                       <h2>Bitcoin</h2>
-                   </div>
-                   <div class="text">
-                       <span>$ 524.585,90</span>
-                       <p class = "text-dark"> + 0,48 % </p>
-                   </div>
-                   
-                   <button class="btn btn-dark btn-sm" (click)="clickAddTodo()">COMPRAR</button>
-                   
-                </div>
-           </div>	 
-           
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          
-               <div class="box-part text-center" style="background-color: rgba(245, 245, 245, 0.4)">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAqBJREFUWEftl++xDEEUxc+LgAwQwSMCRIAIEAEiQASIABGQAS8CRIAMiID6qXu27l79Z2Z2P7wP21VdNTM73f2bc8+93XumS9bOLhmPTkCziGxV6LqkazH5HUlv4vqRpC9x/U3SrxlA/X0p0E1JrySxeG2Py4O35f6HJPozSV9ngEuADPGpA4MKH+K3B5JQD/ja7saDzyOoGRAwL6JXIML0ThLPr8YiwLHwU0kPy8I891xdqBEQi3yXhBdeJxVY5308yzBevwdloHNJN3r+GgHxFbclXUji+nmsOIKpUChyLx7iNUzPnMznEO4J2QNiIgMQGr6ae9QijCiD0UcNA+Opj5JQ5WWE9kkM4p51pkBe0C8ykHY/OgaewXhshgKM5g/lGpX2/FQVsm9sUgYBxMT0NTAVio+gZyCU3/NTBULCWmvIJDqZg0pbGuqQGHiInhsK7UJXgYD5Uwb8DA/hg0Ma/kN5V/g8F4nzr1Ug6FuV9lZU2ysbiX5HuNhWsh2YjuwjAk0gHuYM83s2do7/GrbeeLYTQrlrvbSHOFdazIdKGHutSj11qGfVT8PzEItn32xVqTUOz7Q26iEQsSYDDLVFpZY6Lq7No8lsc2XnzmFaq1J934AcR5ptBsQgihlK4Z01KlV1uCdMwzPREiCgcjngqwFrnXnyV5POKOzM3EvvQxTyWCo1EC73fGmryPE+xRRlOb7gxf/S+xhAzOFygEr4oBZRr5PVaab3sYCYx5nHpthSKavjjFpcRJd6KE/ocsCG2VIJdQgXBqav+uexBQg4lwNnoL2EOs4kfuum9zFD5rlYkOwjbPaS1cFr0788LaitCnkugPCUT30O0273XmyeePFQIKbBUz644atVnqnAxwBaK8Lw/RPQTM6TQjOF/gLHi5olftUWQwAAAABJRU5ErkJggg=="/>
-                   <div class="title">
-                       <h2>Ethereum</h2>
-                   </div>
-                     <div class="text">
-                       <span> $ 12.593,90 </span>
-                       <p class = "text-danger"> - 0,48 % </p>
-                   </div>
-                   
-                   <button class="btn btn-dark btn-sm" >COMPRAR</button>
-                   
-                </div>
-           </div>	 
-           
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          
-               <div class="box-part text-center"  style="background-color: rgba(245, 245, 245, 0.4)">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAktJREFUWEftmI0xBEEQhd9FgAgQASJABIgAESACRIAIEAEiQASIABkQAfUxUzU3Nzvds3eqjtJVV1t329v95vXv3kBTJoMpw6M/A2hZ0rYkrrPhCtmPkt7C9TJcm4LQytCRpL0AwuMIcKeSjj3K6HgBbUo6kbTgNZzpvUg6kHRtPe8BBCuHliHnfWxV2bIAXYRccfpzqWFzt0uzBmiSzOT+YQn7I9IFiJy5cp33OwTReMshtko51QWIJJx3AHqXtC+JMCA7ks4dz6GCj8VctwTIc0qA4LxUNVQipb7hADYSuhIgesdMxRhgcIpeTe4krRo62JhLdXJAdN4HwwgVEkOEKvm2FADehFDw+5qkWwdLK2lHzwFBNZ24JpwospOzkJ/4wwHoLOThl2oOyENz+owVXgce3Qc2i4AYjtBfk7RcGayELI4UvhMqy0ZqH5+ErQjIQzEsrhugAUieWUk9giMPmQcQRgBFctNLxq20odTJAXlCltMNuJjkAKTS4ndPx39K9qleSW0lat6BLdarST1u2QM2dUAuPRsnqJZ9n8ZIVfFBCHk6TjyzrdoYMWr1FkKCEWt00AJgh2uXMIaG7vcdroCiykjoksAMK28NDM+5hiuK3vUDPYym64cHCD5eSzv6r1nQOIFnL7JaQNf95hU2GvqJJZ8XSHKsKNZbx6SZ6mQmovMAQpcRQNP07Nmlk5PA7N4TeVFMHZBXGK6tuKk+fYaDFF95Ssi9DOXP0tHJg/hnQ9x/GJTxzwbyj87dJH0BNTlpUf4HZLH1CdN3eyUXkxweAAAAAElFTkSuQmCC"/>
-                   <div class="title">
-                       <h2>USD Coin</h2>
-                   </div>
-                   
-                   <div class="text">
-                       <span> $ 76,78 </span>
-                       <p class = "text-dark"> +2,78 % </p>
-                   </div>
-                   
-                   <button class="btn btn-dark btn-sm" >COMPRAR</button>
-                   
-                </div>
-           </div>	 
-           
-           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          
-               <div class="box-part text-center" style="background-color: rgba(245, 245, 245, 0.4)">
-                   
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAZJJREFUWEftl9ExBUEQRe+LABnIABEgAkSACBABIkAEyIAIEAEikAIRUKfKqNa1M72zO6W21Pbnm52e82733N5daGKxmBiPZqCoIrNCtQqdSTqStBxtbLh+Jek45fMl+2x4UN9U75JWpgQEy48wNQqdSLrs+7fdc5TkorB3ENCGpJeBQOuSnlsC3UvaHQiTtt1J2snkqFIImANJNJ8PfudWogCBgpT1tuNZbu5NBqoXED3zmCkTyR8MiD8fsO3MnwB+y/VUL6CSi3PgWlBCnqHvcmEtZhSQvzEoSX8QlPDUEBx+l6kLqhmQVafLCnD7BFVSqRmQTYTD+mZflfRmJMmV/v8C2ZKdS6JENmzJXgs3sZlCvqkBSL6z7wD/pKmTAUbXvqQOOaoVQomngjFimjkoYDC/LnfHGDfdoO7lQ3YGIX1udACewABhdDAifODu15mZWAVEYoxvL3DmaLnZcE0HTer1A6jJvaBFJRmzXt1DYw6L9n7Yrxw/Z7ghTOylKEvD9V9uP3+5RsrOCs0KRQpE619d82Il1lVYMAAAAABJRU5ErkJggg=="/>
-                   
-                   <div class="title">
-                       <h2>PIL Coin</h2>
-                   </div>
-                   
-                   <div class="text">
-                       <span> $ 7,087.45</span>
-                       <p class = "text-dark"> + 0,48 % </p>
-                   </div>
-                    <button class="btn btn-dark btn-sm" >COMPRAR</button>
-                   
-                </div>
-           </div>	 
-           
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          
-               <div class="box-part text-center"  style="background-color: rgba(245, 245, 245, 0.4)">
-                   
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAbJJREFUWEftleExBEEQhd9FQAZkQAaIgAwQASJABMiACJCBiwAZkAEZqE/1Xu1O7U73jFN11EzV/tmd6f729euemVZszVaMRw3Iq0hTqCnkKeB9/1ce2pV0LmnTHn7+TdKLpFtJj54aY99rFFqXdC8JoNwC7NgAw2w1QCTaCmb4kLRXAlUKdC3pRNKrJaFcOw6cB7XdBy4FepJ0ZF7pOIACdD8DBtSppLtkD7GwAOe/VwkQiQnMM7Yw8qGjFqZ/sCbAg+RHId4XA0VsE4Hqx8FfqL5YJQpFgNhzYeMgt//TSsgPDNZvAJGA8uIZytE3/dwUwTOjpc8BYTYGH0H7MweJaf2bxNxRBbP7poBw/5V1QC4A5blcCknG1Ac2iaN58AETeSkrVYjaP1s7UhraEcANJ1sOitLzLFo7FysFwoiYLXU/JcSIa5lgzJezkaFJLO/em2z7wRhPkvMN1XJQHOmUBQLFMT8/GlqlbR+F6pLT5mF1OFQKxBmgKIN34wOD/6aumlHFaoC6QCTjAbCDe7cZhd8GV0KoXpUKRWNX7fuJQlUJvUMNqCnkKeB9bx76cwp9AX87RiV82CrqAAAAAElFTkSuQmCC"/>
-               
-                   <div class="title">
-                       <h2>Litecoin</h2>
-                   </div>
-                   
-                   <div class="text">
-                       <span>$ 45,98</span>
-                       <p class = "text-danger"> - 0,90 % </p>
-                   </div>
-                   <button class="btn btn-dark btn-sm" >COMPRAR</button>
-                </div>
-           </div>	 
-           
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          
-               <div class="box-part text-center" style="background-color: rgba(245, 245, 245, 0.4)">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAdtJREFUWEftmI8xBTEQxn+vAkqgAlSACugAFaACVIAK6AAVPDqgAnSgBPOZxERu8+dyx9yY25mbm0uyu9/7drPZvAUTk8XE8PBvAG0C28A+sAroW/IMfAD3wJP77hWEvgztAJcBgJKzR+AC0LtKagGJhTtAgFpEjB059rL6NYAUjpserKQcKpwCpXdSSoDEzKvLkxZmYh3l13qOqRwggVmOwEwMSgxtpX5dDtA5cDYGLYYNJbrsdyQFaOxQVYcuBegKOP4ldrxZk6UUIMV5wwD0Apy4uqKiKNrjdTVrfBHt5JIFaM3trBjPu0tw7RQvCu0bsOIGataEdrXjpP8tFiAVP+2uWK4dO/H4LXDgBmvWhPq7cRW3ACkkOh7+AtApoHzNMpTa7lZRi3djzZrQfyexLYZy9UfJrvkHd9KrTvmT3juqWZPcaX0BGZEcNDSYoUHeDeUZUInRmaGZoRIDpfk5h0ZhKHW4loy3zFcdrql+qMVhSUcN2o9rUapjDHucktHWeV21OxfPXJOv66/VxgqAqFYLq/u9JXKm26rVV2m92lyBCbvPLzuli6LyKXSstkMNlb+rHwJ6wj8bxK4eiZzKxp77FhABlY0OmBpAreFo1isx1Gy4VXFygD4BL7dwJdHBzZUAAAAASUVORK5CYII="/>
+            <div class="col-lg-4 col-md-8 col-sm-6 col-xs-12">
+                <div class="box-part text-center" style="background-color:
+                    rgba(245, 245, 245, 0.4)">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAaRJREFUWEftl4FNxDAMRd9NACPABMAEwAQwAkwATABsABvABMAEcBvABrABTAD6KD5ZVXtxS9NWqJZO6jVN8mJ/O8mCidliYjzMQLmIdPXQAbCfBl8CL+m56X2OY9XeFegKuEyjXAP6L2t6//+BtPJvt0yFRj+ZwuVDZu9vgfOwa9KH0ZB5mDZzvAMXwGO0U2kg4zgF7iJQUSATrcY0MetZgq6zLeAY2HCN24A8ttaiQH4QH751/TeTtnZS53vgZEwgzS0vPSSIV2BvbCDNH/XoL2vJkFU99AbsjukhaejZQQyiIZ99fvGWZYKSfSWw4lmWi4C1+/2uaNpHgT6BQ0CZVhSoqTBqUgn4yM2ucKk4FgXKZamgtPFaxc5uIbkB61bTqq4AN8BZtFoPAaTjiNJfptOlHU9qQzcEkPfQU9pOGnVUGkgaknesHvWmIX9i9MWwqTBalmlzNfsAVDB7ybKuJ0abXJVa2umtDv0FSELW2ToLI/qohqqhidzLJGD1C4GYK6NA1bjP97JcMkTuZf6+lhtv1d41ZOEJ2n44A+U8NjkP/QDnM10lZki+egAAAABJRU5ErkJggg=="
+                    />
                     <div class="title">
-                       <h2>GoshCoin</h2>
-                   </div>
-                   
-                   <div class="text">
-                       <span>$ 12.456,45 </span>
-                       <p class = "text-danger"> - 0,90 % </p>
-                   </div>
-                   <button class="btn btn-dark btn-sm" >COMPRAR</button>
-               
-                   
+                        <h2>Bitcoin</h2>
+                    </div>
+                    <div class="text">
+                        <span>$ 524.585,90</span>
+                        <p class="text-dark"> + 0,48 % </p>
+                    </div>
+                    <button class="btn btn-dark btn-sm" (click)="open()">COMPRAR</button>
+
                 </div>
-           </div>
-   
-   </div>		
-</div>
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-6 col-xs-12">
+                <div class="box-part text-center" style="background-color:
+                    rgba(245, 245, 245, 0.4)">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAqBJREFUWEftl++xDEEUxc+LgAwQwSMCRIAIEAEiQASIABGQAS8CRIAMiID6qXu27l79Z2Z2P7wP21VdNTM73f2bc8+93XumS9bOLhmPTkCziGxV6LqkazH5HUlv4vqRpC9x/U3SrxlA/X0p0E1JrySxeG2Py4O35f6HJPozSV9ngEuADPGpA4MKH+K3B5JQD/ja7saDzyOoGRAwL6JXIML0ThLPr8YiwLHwU0kPy8I891xdqBEQi3yXhBdeJxVY5308yzBevwdloHNJN3r+GgHxFbclXUji+nmsOIKpUChyLx7iNUzPnMznEO4J2QNiIgMQGr6ae9QijCiD0UcNA+Opj5JQ5WWE9kkM4p51pkBe0C8ykHY/OgaewXhshgKM5g/lGpX2/FQVsm9sUgYBxMT0NTAVio+gZyCU3/NTBULCWmvIJDqZg0pbGuqQGHiInhsK7UJXgYD5Uwb8DA/hg0Ma/kN5V/g8F4nzr1Ug6FuV9lZU2ysbiX5HuNhWsh2YjuwjAk0gHuYM83s2do7/GrbeeLYTQrlrvbSHOFdazIdKGHutSj11qGfVT8PzEItn32xVqTUOz7Q26iEQsSYDDLVFpZY6Lq7No8lsc2XnzmFaq1J934AcR5ptBsQgihlK4Z01KlV1uCdMwzPREiCgcjngqwFrnXnyV5POKOzM3EvvQxTyWCo1EC73fGmryPE+xRRlOb7gxf/S+xhAzOFygEr4oBZRr5PVaab3sYCYx5nHpthSKavjjFpcRJd6KE/ocsCG2VIJdQgXBqav+uexBQg4lwNnoL2EOs4kfuum9zFD5rlYkOwjbPaS1cFr0788LaitCnkugPCUT30O0273XmyeePFQIKbBUz644atVnqnAxwBaK8Lw/RPQTM6TQjOF/gLHi5olftUWQwAAAABJRU5ErkJggg=="
+                    />
+                    <div class="title">
+                        <h2>Ethereum</h2>
+                    </div>
+                    <div class="text">
+                        <span> $ 12.593,90 </span>
+                        <p class="text-danger"> - 0,48 % </p>
+                    </div>
+                    <button class="btn btn-dark btn-sm">COMPRAR</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-6 col-xs-12">
+                <div class="box-part text-center" style="background-color:
+                    rgba(245, 245, 245, 0.4)">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAktJREFUWEftmI0xBEEQhd9FgAgQASJABIgAESACRIAIEAEiQASIABkQAfUxUzU3Nzvds3eqjtJVV1t329v95vXv3kBTJoMpw6M/A2hZ0rYkrrPhCtmPkt7C9TJcm4LQytCRpL0AwuMIcKeSjj3K6HgBbUo6kbTgNZzpvUg6kHRtPe8BBCuHliHnfWxV2bIAXYRccfpzqWFzt0uzBmiSzOT+YQn7I9IFiJy5cp33OwTReMshtko51QWIJJx3AHqXtC+JMCA7ks4dz6GCj8VctwTIc0qA4LxUNVQipb7hADYSuhIgesdMxRhgcIpeTe4krRo62JhLdXJAdN4HwwgVEkOEKvm2FADehFDw+5qkWwdLK2lHzwFBNZ24JpwospOzkJ/4wwHoLOThl2oOyENz+owVXgce3Qc2i4AYjtBfk7RcGayELI4UvhMqy0ZqH5+ErQjIQzEsrhugAUieWUk9giMPmQcQRgBFctNLxq20odTJAXlCltMNuJjkAKTS4ndPx39K9qleSW0lat6BLdarST1u2QM2dUAuPRsnqJZ9n8ZIVfFBCHk6TjyzrdoYMWr1FkKCEWt00AJgh2uXMIaG7vcdroCiykjoksAMK28NDM+5hiuK3vUDPYym64cHCD5eSzv6r1nQOIFnL7JaQNf95hU2GvqJJZ8XSHKsKNZbx6SZ6mQmovMAQpcRQNP07Nmlk5PA7N4TeVFMHZBXGK6tuKk+fYaDFF95Ssi9DOXP0tHJg/hnQ9x/GJTxzwbyj87dJH0BNTlpUf4HZLH1CdN3eyUXkxweAAAAAElFTkSuQmCC"
+                    />
+                    <div class="title">
+                        <h2>USD Coin</h2>
+                    </div>
+                    <div class="text">
+                        <span> $ 76,78 </span>
+                        <p class="text-dark"> +2,78 % </p>
+                    </div>
+                    <button class="btn btn-dark btn-sm">COMPRAR</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-6 col-xs-12">
+                <div class="box-part text-center" style="background-color:
+                    rgba(245, 245, 245, 0.4)">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAZJJREFUWEftl9ExBUEQRe+LABnIABEgAkSACBABIkAEyIAIEAEikAIRUKfKqNa1M72zO6W21Pbnm52e82733N5daGKxmBiPZqCoIrNCtQqdSTqStBxtbLh+Jek45fMl+2x4UN9U75JWpgQEy48wNQqdSLrs+7fdc5TkorB3ENCGpJeBQOuSnlsC3UvaHQiTtt1J2snkqFIImANJNJ8PfudWogCBgpT1tuNZbu5NBqoXED3zmCkTyR8MiD8fsO3MnwB+y/VUL6CSi3PgWlBCnqHvcmEtZhSQvzEoSX8QlPDUEBx+l6kLqhmQVafLCnD7BFVSqRmQTYTD+mZflfRmJMmV/v8C2ZKdS6JENmzJXgs3sZlCvqkBSL6z7wD/pKmTAUbXvqQOOaoVQomngjFimjkoYDC/LnfHGDfdoO7lQ3YGIX1udACewABhdDAifODu15mZWAVEYoxvL3DmaLnZcE0HTer1A6jJvaBFJRmzXt1DYw6L9n7Yrxw/Z7ghTOylKEvD9V9uP3+5RsrOCs0KRQpE619d82Il1lVYMAAAAABJRU5ErkJggg=="
+                    />
+                    <div class="title">
+                        <h2>PIL Coin</h2>
+                    </div>
+                    <div class="text">
+                        <span> $ 7,087.45</span>
+                        <p class="text-dark"> + 0,48 % </p>
+                    </div>
+                    <button class="btn btn-dark btn-sm">COMPRAR</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-6 col-xs-12">
+                <div class="box-part text-center" style="background-color:
+                    rgba(245, 245, 245, 0.4)">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAbJJREFUWEftleExBEEQhd9FQAZkQAaIgAwQASJABMiACJCBiwAZkAEZqE/1Xu1O7U73jFN11EzV/tmd6f729euemVZszVaMRw3Iq0hTqCnkKeB9/1ce2pV0LmnTHn7+TdKLpFtJj54aY99rFFqXdC8JoNwC7NgAw2w1QCTaCmb4kLRXAlUKdC3pRNKrJaFcOw6cB7XdBy4FepJ0ZF7pOIACdD8DBtSppLtkD7GwAOe/VwkQiQnMM7Yw8qGjFqZ/sCbAg+RHId4XA0VsE4Hqx8FfqL5YJQpFgNhzYeMgt//TSsgPDNZvAJGA8uIZytE3/dwUwTOjpc8BYTYGH0H7MweJaf2bxNxRBbP7poBw/5V1QC4A5blcCknG1Ac2iaN58AETeSkrVYjaP1s7UhraEcANJ1sOitLzLFo7FysFwoiYLXU/JcSIa5lgzJezkaFJLO/em2z7wRhPkvMN1XJQHOmUBQLFMT8/GlqlbR+F6pLT5mF1OFQKxBmgKIN34wOD/6aumlHFaoC6QCTjAbCDe7cZhd8GV0KoXpUKRWNX7fuJQlUJvUMNqCnkKeB9bx76cwp9AX87RiV82CrqAAAAAElFTkSuQmCC"
+                    />
+                    <div class="title">
+                        <h2>Litecoin</h2>
+                    </div>
+                    <div class="text">
+                        <span>$ 45,98</span>
+                        <p class="text-danger"> - 0,90 % </p>
+                    </div>
+                    <button class="btn btn-dark btn-sm">COMPRAR</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8 col-sm-6 col-xs-12">
+                <div class="box-part text-center" style="background-color:
+                    rgba(245, 245, 245, 0.4)">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAdtJREFUWEftmI8xBTEQxn+vAkqgAlSACugAFaACVIAK6AAVPDqgAnSgBPOZxERu8+dyx9yY25mbm0uyu9/7drPZvAUTk8XE8PBvAG0C28A+sAroW/IMfAD3wJP77hWEvgztAJcBgJKzR+AC0LtKagGJhTtAgFpEjB059rL6NYAUjpserKQcKpwCpXdSSoDEzKvLkxZmYh3l13qOqRwggVmOwEwMSgxtpX5dDtA5cDYGLYYNJbrsdyQFaOxQVYcuBegKOP4ldrxZk6UUIMV5wwD0Apy4uqKiKNrjdTVrfBHt5JIFaM3trBjPu0tw7RQvCu0bsOIGataEdrXjpP8tFiAVP+2uWK4dO/H4LXDgBmvWhPq7cRW3ACkkOh7+AtApoHzNMpTa7lZRi3djzZrQfyexLYZy9UfJrvkHd9KrTvmT3juqWZPcaX0BGZEcNDSYoUHeDeUZUInRmaGZoRIDpfk5h0ZhKHW4loy3zFcdrql+qMVhSUcN2o9rUapjDHucktHWeV21OxfPXJOv66/VxgqAqFYLq/u9JXKm26rVV2m92lyBCbvPLzuli6LyKXSstkMNlb+rHwJ6wj8bxK4eiZzKxp77FhABlY0OmBpAreFo1isx1Gy4VXFygD4BL7dwJdHBzZUAAAAASUVORK5CYII="
+                    />
+                    <div class="title">
+                        <h2>GoshCoin</h2>
+                    </div>
+                    <div class="text">
+                        <span>$ 12.456,45 </span>
+                        <p class="text-danger"> - 0,90 % </p>
+                    </div>
+                    <button class="btn btn-dark btn-sm">COMPRAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
