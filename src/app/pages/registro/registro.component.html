@@ -7,74 +7,57 @@
                         <div class="card-body text-center">
                             <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
                                 <h1 class="m-2">Registrate</h1>
-                                <p class="mb-4">Es simple, facil y gratis</p>
+                                <p class="mb-4">Es simple, fácil y gratis.</p>
                                 <!--Nombre-->
-                                <input formControlName="nombre" type="text" class="form-control input"
-                                    placeholder="Nombre">
+                                <input formControlName="nombre" type="text" class="form-control input" placeholder="Nombre">
                                 <!--Nombre validaciones-->
-                                <div class="text-danger"
-                                    *ngIf="signupForm.get('nombre').hasError('required') && signupForm.get('nombre').touched">
+                                <div class="text-danger" *ngIf="signupForm.get('nombre').hasError('required') && signupForm.get('nombre').touched">
                                     Ingrese el nombre
                                 </div>
                                 <br>
 
                                 <!--Apellido-->
-                                <input formControlName="apellido" type="text" class="form-control"
-                                    placeholder="Apellido">
+                                <input formControlName="apellido" type="text" class="form-control" placeholder="Apellido">
                                 <!--Apellido validaciones-->
-                                <div class="text-danger"
-                                    *ngIf="signupForm.get('apellido').hasError('required') && signupForm.get('apellido').touched">
-                                    Ingrese el
-                                    apellido</div>
+                                <div class="text-danger" *ngIf="signupForm.get('apellido').hasError('required') && signupForm.get('apellido').touched">
+                                    Ingrese el apellido
+                                </div>
                                 <br>
 
                                 <!--DNI-->
                                 <input formControlName="dni" type="number" class="form-control" placeholder="DNI">
                                 <!--DNI validaciones-->
-                                <div class="text-danger"
-                                    *ngIf="signupForm.get('dni').hasError('required') && signupForm.get('dni').touched">
-                                    El
-                                    dni
-                                    es requerido</div>
+                                <div class="text-danger" *ngIf="signupForm.get('dni').hasError('required') && signupForm.get('dni').touched">
+                                    El dni es requerido</div>
                                 <br>
 
                                 <!--Mail-->
-                                <input formControlName="mail" type="mail" class="form-control" placeholder="E-mail">
+                                <input formControlName="email" type="email" class="form-control" placeholder="E-mail">
                                 <!--Mail validaciones-->
-                                <div class="text-danger"
-                                    *ngIf="signupForm.get('mail').hasError('required') && signupForm.get('mail').touched">
-                                    Introduzca un mail</div>
+                                <div class="text-danger" *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched">
+                                    Introduzca un e-mail</div>
 
-                                <div class="text-danger"
-                                    *ngIf="signupForm.get('mail').hasError('email') && signupForm.get('mail').touched">
-                                    Ingrese un mail valido</div>
-                                <br>
 
-                                <!--Usuario-->
-                                <input formControlName="usuario" type="text" class="form-control" placeholder="Usuario">
-                                <!--Usuario Validaciones-->
-                                <div class="text-danger"
-                                    *ngIf="signupForm.get('usuario').hasError('required') && signupForm.get('usuario').touched">
-                                    Ingrese el
-                                    usuario
-                                </div>
-                                <div *ngIf="signupForm.get('usuario').hasError('minlength')">Cantidad minima de
-                                    caracteres es 4
-                                </div>
+
                                 <br>
 
                                 <!--Contraseña-->
-                                <input formControlName="clave" type="password" class="form-control"
-                                    placeholder="Contraseña">
-                                <!--Contraseña Validaciones-->
-                                <div class="text-danger"
-                                    *ngIf="signupForm.get('clave').hasError('required') && signupForm.get('clave').touched">
-                                    Ingrese la clave</div>
-                                <div class="text-danger"
-                                    *ngIf="signupForm.get('clave').hasError('minlength') && signupForm.get('clave').dirty && signupForm.get('clave').touched">
-                                    Cantidad minima de caracteres es 6</div>
-                                <br>
+                                <input formControlName="clave" type="password" class="form-control" placeholder="Contraseña">
 
+                                <!--Contraseña Validaciones-->
+                                <div class="text-danger" *ngIf="signupForm.get('clave').hasError('required') && signupForm.get('clave').touched">
+                                    Ingrese la contraseña</div>
+                                <div class="text-danger" *ngIf="signupForm.get('clave').hasError('minlength') && signupForm.get('clave').dirty && signupForm.get('clave').touched">
+                                    Debe contener al menos: 1 N°, 1 Mayúscula y 8 o + caracteres.
+                                </div>
+                                <br>
+                                <input formControlName="clave2" type="password" class="form-control" placeholder="Reingrese la contraseña">
+                                <div class="text-danger" *ngIf="signupForm.get('clave2').hasError('required') && signupForm.get('clave2').touched">
+                                    Reingrese la contraseña</div>
+                                <div class="text-danger" *ngIf="signupForm.get('clave2').hasError('minlength') && signupForm.get('clave2').dirty && signupForm.get('clave').touched">
+                                    Debe contener al menos: 1 N°, 1 Mayúscula y 8 o + caracteres.
+                                </div>
+                                <br>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                     <label class="form-check-label" for="defaultCheck1">
@@ -87,7 +70,7 @@
                                 </div>
 
                                 <!--Boton Registrarse-->
-                                <button class="btn btn-primary" [disabled]="signupForm.invalid">Registrarme</button>
+                                <button type="button" class="btn btn-secondary mr-2" [disabled]="signupForm.invalid" placement="top" ngbPopover="" popoverTitle="Registro Exitoso!.">Registrarme</button>
                             </form>
                         </div>
                     </div>
