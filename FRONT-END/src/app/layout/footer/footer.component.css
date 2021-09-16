@@ -1,0 +1,17 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+.social-list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.social-list li {
+    padding: 10px;
+    color: #EB7329;
+    font-size: 19px
+}
+
+.social-list li:hover {
+    transform: scale(1.5);}
