@@ -1,0 +1,71 @@
+.bg {
+    min-height: 100vh;
+    height: auto;
+    background-image: linear-gradient( to right, rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.5)), url("./ImgIngresarDinero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(30%);
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.card {
+    background-color: rgba(53, 51, 51, 0.767);
+    border-radius: 2.5rem;
+}
+
+#container {
+    border: solid 1px;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+.card-body input {
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.719);
+    text-align: center;
+    color: black;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.card-body select {
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.719);
+}
+
+#title {
+    text-align: center;
+    color: white;
+}
+
+#select-ingreso {
+    height: 45px;
+}
+
+button {
+    background-color: #EB7329;
+    border: none;
+    border-radius: 5rem;
+    padding: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+button:disabled {
+    background-color: #EB7329;
+}
+
+label {
+    font-size: 20px;
+    color: white;
+}
+
+#msj-adv {
+    color: rgb(238, 208, 208);
+    font-weight: bold;
+}

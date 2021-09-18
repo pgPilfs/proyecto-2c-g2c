@@ -1,0 +1,16 @@
+input[type="number"]
+{
+    -webkit-appearance: textfield !important;
+    margin: 0;
+    -moz-appearance:textfield !important;
+}
+.bg{
+    min-height: 100vh;
+    height: auto;
+    background-image: url(./img/descarga.jpg); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+

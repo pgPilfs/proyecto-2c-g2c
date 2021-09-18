@@ -1,0 +1,13 @@
+@media (min-width: 768px){
+    .alineado{
+        display: flex;
+        justify-content: flex-end;
+        align-content: flex-end;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
+
+.orange{
+    background-color: #EB7329;
+}

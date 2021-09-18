@@ -1,0 +1,48 @@
+<div class="bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 mx-auto">
+                <div class="card_registro mt-5 mb-5">
+                    <div class="card">
+                        <div class="card-body text-center">
+
+                            <h1 class="card-title pb-3" id="title">Ingresar dinero</h1>
+
+                            <form [formGroup]="IngresoForm" (ngSubmit)="enviar(IngresoForm.value)">
+
+                                <div class="p-2">
+                                    <label>*Cantidad a ingresar:</label>
+                                    <input class="form-control" type="string" formControlName="monto" placeholder="Ej. 100.00" />
+                                </div>
+
+                                <div class="p-2">
+                                    <label>Tipo de moneda: </label>
+                                    <select class="form-select col-12" aria-label="Default select example" id="select-ingreso">
+                                            <option selected value="1">Pesos</option>
+                                            <option value="2">Dólar</option>
+                                            <option value="3">BitCoins</option>
+                                        </select>
+                                </div>
+
+                                <!--Validaciones dinero requerido-->
+                                <div class="text-danger d-flex flex-row justify-content-center alig-items-center" *ngIf="IngresoForm.get('monto').hasError('required') && IngresoForm.get('monto').touched" id="msj-adv">
+                                    *La cantidad es obligatoria.
+                                </div>
+
+                                <!--Validacion monto minimo-->
+                                <div class="text-danger d-flex flex-row justify-content-center alig-items-center" *ngIf="IngresoForm.get('monto').hasError('min')" id="msj-adv">
+                                    Ingrese un monto válido.
+                                </div>
+
+                                <!--Campo Boton-->
+                                <div class="d-flex flex-row justify-content-center alig-items-center">
+                                    <button class="btn btn-dark mt-3 mb-3 col-11" [disabled]="IngresoForm.invalid">Realizar Operación</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
