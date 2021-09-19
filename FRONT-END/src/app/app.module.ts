@@ -12,6 +12,7 @@ import { TransferenciaComponent } from './pages/transferencia/transferencia.comp
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UltMovComponent } from './pages/ultMovimientos/ult-mov/ult-mov.component';
+import { ExtraerDineroComponent } from './pages/extraer-dinero/extraer-dinero.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { UltMovComponent } from './pages/ultMovimientos/ult-mov/ult-mov.componen
     PagBienvenidaComponent,
     LoginComponent,
     UltMovComponent,
+    ExtraerDineroComponent,
   ],
   imports: [
     BrowserModule,
