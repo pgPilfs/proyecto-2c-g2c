@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { UltMovComponent } from './pages/ultMovimientos/ult-mov/ult-mov.component';
 import { ExtraerDineroComponent } from './pages/extraer-dinero/extraer-dinero.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'transferencia', component: TransferenciaComponent},
   { path: 'saldo', component: UltMovComponent},
   { path: 'extraer', component: ExtraerDineroComponent},
+  { path: 'inicio', component: InicioComponent},
 
 
   { path: '', component: PagBienvenidaComponent },
