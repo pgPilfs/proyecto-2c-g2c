@@ -1,0 +1,27 @@
+<div class="row center-block aling-item-center justify-content-center">
+    <div class="container-flex m-4 col-5" id="borde">
+        <div class="row center-block aling-item-center justify-content-center">
+            <div>
+
+                <h2 class="pt-2 text-center">Retiro de dinero</h2>
+        
+                <div class="input-group pt-4 pb-2">
+                    <span class="input-group-text" id="span-monto">Monto a retirar</span>
+                    <input [formControl]="montoRetiro" type="number" class="form-control">
+                    <select class="form-select" id="select-medio" aria-label="Default select example">
+                        <option selected > Medio de extracción </option>
+                        <option value="1">Opcion 1</option>
+                        <option value="2">Opcion 2</option>
+                        <option value="3">Opcion 3</option>
+                    </select>
+                </div>
+                
+                <div class="d-grid gap-2 pb-4 pt-2 ">
+                    <button class="col-12" type="button" (click)="RealizarOp()">Realizar operación</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
