@@ -12,7 +12,9 @@ import { TransaccionComponent } from './transaccion/transaccion.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { LoginTestComponent } from './login-test/login-test.component';
 import { ConsultaSaldoComponent } from './pages/consulta-saldo/consulta-saldo.component';
-
+import { RegistroService } from './servicios/registro.service';
+/*import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router'; SE AGREGAN PARA HACER LO DE HTTP Y ROUTER*/
 
 @NgModule({
   declarations: [
@@ -30,9 +32,11 @@ import { ConsultaSaldoComponent } from './pages/consulta-saldo/consulta-saldo.co
     NgbModule,
     LayoutModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule, 
+    /*HttpClientModule, 
+    Router*/
   ],
-  providers: [],
+  providers: [RegistroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

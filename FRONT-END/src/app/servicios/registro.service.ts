@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 export class RegistroService {
   clientes = usuarios;
   registrado: boolean;
-  dniEnUso: boolean;
 
   constructor(private router: Router) { }
   registro(cliente: Usuario ){
@@ -17,11 +16,6 @@ export class RegistroService {
       debugger
       if(usuario.mail === cliente.mail){
         this.registrado = true;
-        break
-      };
-      if(usuario.dni === cliente.dni){
-        this.registrado = true;
-        this.dniEnUso = true;
         break
       }
     }
@@ -36,13 +30,49 @@ export class RegistroService {
       //no dirigir al login, diseñar una vista para que el cliente toque loguearse
       console.log("email no encontrado");
     }
-    if(this.dniEnUso){
-      console.log('dni encontrado')
-    }else{
-      console.log('dni no encontrado')
-    }
+
 
   }
 
 }
 
+
+/*DESDE ACA HABIA HECHO LO QUE HIZO LA PROFE PERO ME SALE ALGO MAL =(
+
+/*import { Injectable } from '@angular/core';
+import { usuarios, Usuario } from '../models/usuario';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
+
+@Injectable({
+  providedIn: 'root'
+})
+
+
+export class RegistroService {
+  
+  
+
+  constructor(private http: HttpClient) { }
+  url:"http://www.webapigcpil.somee.com/api/cliente";
+
+
+  onCrearRegistro(cliente: Usuario ):Observable<Usuario>{
+    return this.http.post<Usuario>(this.url, cliente);
+  }
+}
+
+    export class usuario{
+ nombre: string="";
+ apelllido: string="";
+ dni: string="";
+ fechaNacimiento: string="";
+ mail: string="";
+ clave: string="";
+ clave2: string="";
+    }
+
+*/
