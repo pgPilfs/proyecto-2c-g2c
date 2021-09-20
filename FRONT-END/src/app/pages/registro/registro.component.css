@@ -1,0 +1,72 @@
+input[type="number"] {
+    -webkit-appearance: textfield !important;
+    margin: 0;
+    -moz-appearance: textfield !important;
+}
+
+.bg {
+    min-height: 100vh;
+    height: auto;
+    background-image: url(./img/fono_registro.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.card {
+    background-color: rgba(245, 245, 245, 0.1);
+    border-radius: 2.5rem;
+}
+
+.card-body input {
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: white;
+}
+
+h1,
+p {
+    color: #fff;
+}
+
+ ::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+    background-color: #EB7329;
+    border: none;
+}
+
+button:disabled {
+    background-color: #EB7329;
+}
+
+.form-check {
+    margin: -0.6rem 0 1rem 0;
+    text-align: left;
+    color: white;
+    font-weight: 200;
+}
+
+.yaRegistrado {
+    font-weight: 200;
+    margin: 1.4rem;
+}
+
+.yaRegistrado a {
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+}
+
+.yaRegistrado a:hover {
+    color: rgb(206, 206, 206);
+}
+
+.logo {
+    margin: -3rem 0 -8rem 0;
+}
