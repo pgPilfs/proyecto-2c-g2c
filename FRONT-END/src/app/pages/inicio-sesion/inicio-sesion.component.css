@@ -1,0 +1,64 @@
+.login {
+    width: fit-content;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin: 5rem auto;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.login button {
+    text-align: center;
+}
+
+.bienvenida {
+    color: #2182C9;
+    text-align: center;
+    font-size: 2em;
+}
+
+input {
+    width: 17rem;
+    height: 1rem;
+    font-size: 1.2em;
+    margin: 5px;
+    padding: 10px;
+}
+
+label {
+    color: #2182C9;
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.2em;
+}
+
+input:focus,
+input:active {
+    background-color: #2182C9;
+    color: #ffff;
+    border-color: #ffff;
+}
+
+button,
+a {
+    background-color: #2182C9;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.2em;
+    color: #ffff;
+    margin: 7px;
+    border: none;
+}
+
+button:hover,
+button:focus,
+button:active {
+    background-color: #ffff;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    color: #2182C9;
+    margin: 7px;
+    border-radius: 5px;
+    border-color: #2182C9;
+}

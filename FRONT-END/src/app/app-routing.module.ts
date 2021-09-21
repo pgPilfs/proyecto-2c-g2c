@@ -7,7 +7,8 @@ import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.co
 import { LoginComponent } from './pages/login/login.component';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { UltMovComponent } from './pages/ultMovimientos/ult-mov/ult-mov.component';
-
+import { RegisterComponent } from './pages/register/register.component';
+import { InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion.component';
 
 const routes: Routes = [
   { path: 'bienvenida', component: PagBienvenidaComponent},
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'transferencia', component: TransferenciaComponent},
   { path: 'saldo', component: UltMovComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'iniciosesion', component: InicioSesionComponent},
 
 
   { path: '', component: PagBienvenidaComponent },

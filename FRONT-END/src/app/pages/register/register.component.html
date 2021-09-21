@@ -1,0 +1,170 @@
+<div class="bg">
+    <div class="container-fluid d-flex justify-content-center align-items-center h-100">
+        <div class="box card p-3 py-4">
+            <h4 class="titulo">Registrate</h4>
+            <form [formGroup]="form" (ngSubmit)="onEnviar($event,usuario)" novalidate>
+                <table>
+                    <tr>
+                        <td><small id="nombre" class="form-text text-white">  Ingrese su nombre:</small>
+                            <input type="text" style="color: white;" class="form-control casilla2" formControlName="nombre" [(ngModel)]="usuario.nombre">
+                            <div *ngIf="nombreField?.errors  && nombreField?.dirty" class="text-danger">
+                                <p *ngIf="nameField?.hasError('required')">
+                                    El nombre es requerido.
+                                </p>
+                            </div>
+                        </td>
+                        <p style="visibility: hidden;">hh</p>
+                        <td>
+                            <small id="apellido" class="form-text text-white">  Ingrese su apellido:</small>
+                            <input type="text" style="color: white;" class="form-control casilla2" formControlName="apellido" [(ngModel)]="usuario.apellido" />
+                            <div *ngIf="apellidoField?.errors  && apellidoField?.dirty" class="text-danger">
+                                <p *ngIf="lastNameField?.hasError('required')">
+                                    El apellido es requerido.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <div>
+                                <small id="dnilHelp" class="form-text text-white">  Ingresa su n° de DNI</small>
+                                <input type="number" style="color: white;" class="form-control casilla2" formControlName="dni" [(ngModel)]="usuario.documento" />
+                                <div *ngIf="dniField?.errors  && dniField?.dirty" class="text-danger">
+                                    <p *ngIf="dniField?.hasError('required')">
+                                        El DNI es requerido.
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+                        <p style="visibility: hidden;">hh</p>
+                        <td>
+                            <small id="nacimiento" class="form-text text-white"> Fecha de Nacimiento:</small>
+                            <input type="date" style="color: white;" class="form-control casilla2 text-white" placeholder="Fecha de Nacimiento" formControlName="nacimiento" [(ngModel)]="usuario.fecha_de_nacimiento" />
+                            <div *ngIf="nacimientoField?.errors  && nacimientoField?.dirty" class="text-danger">
+                                <p *ngIf="nacimientoField?.hasError('required')">
+                                    La fecha de nacimiento es requerida.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class>
+                    <small id="dnilHelp" class="form-text text-white">  Ingrese su CUIL sin incluir puntos.</small>
+                    <input type="text" style="color: white;" class="form-control casilla2" formControlName="cuil" [(ngModel)]="usuario.cuil" />
+                    <div *ngIf="cuilField?.errors  && cuilField?.dirty" class="text-danger">
+                        <p *ngIf="cuilField?.hasError('required')">
+                            El cuil es requerido.
+                        </p>
+                        <p *ngIf="cuilField?.hasError('minlength')">
+                            El formato del cuil debe ser válido.
+                        </p>
+                        <p *ngIf="cuilField?.hasError('maxlength')">
+                            El formato del cuil debe ser válido.
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <small id="sexo" class="form-text text-white"> Ingrese su género:</small>
+                    <select class="custom-select form-select casilla2 text-white" (change)="onSelectGenero($any($event.target).value)">
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <small id="dnilHelp" class="form-text text-white">  Ingrese su nacionalidad:</small>
+                    <select class="custom-select form-select casilla2 text-white " (change)="onSelectNacionalidad($any($event.target).value)">
+                    <option value="Argentina">Argentina</option>
+                    <option value="Boliviana">Boliviana</option>
+                    <option value="Brasilera">Brasilera</option>
+                    <option value="Chilena">Chilena</option>
+                    <option value="Paraguaya">Paraguaya</option>
+                    <option value="Uruguaya">Uruguaya</option>
+                    <option value="Otra">Otra</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <small id="provincia" class="form-text text-white">  Provincia:</small>
+                    <select class="custom-select form-select casilla2 text-white" (change)="onSelect($any($event.target).value)">
+                    <option *ngFor="let prov of provincias" value={{prov.Id_provincia}}>
+                        {{prov.Provinciaa}}
+                    </option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <small id="localidad" class="form-text text-white"> Localidad:</small>
+                    <select class="custom-select form-select casilla2 text-white" (change)="onSelectLocalidad($any($event.target).value)">
+                    <option *ngFor="let loc of localidades" value={{loc.Id_localidad}}>
+                        {{loc.Nombre}}
+                    </option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <small id="email" class="form-text text-white">  Ingrese su E-mail.</small>
+                    <input type="email" style="color: white;" class="form-control casilla2" formControlName="mail" [(ngModel)]="usuario.mail" />
+                    <div *ngIf="mailField?.errors  && mailField?.dirty" class="text-danger">
+                        <p *ngIf="mailField?.hasError('required')">
+                            El mail es requerido.
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <small id="contrasena" class="form-text text-white"> Contraseña.</small>
+                    <input type="password" style="color: white;" class="form-control casilla2" formControlName="contrasena" [(ngModel)]="usuario.contrasena" />
+                    <small id="passwordlHelp" class="form-text text-muted">Debe tener entre 8 y 15 caracteres.</small>
+                    <div *ngIf="passField?.errors  && passField?.dirty" class="text-danger">
+                        <p *ngIf="passField?.hasError('required')">
+                            La contraseña es requerida.
+                        </p>
+                        <p *ngIf="passField?.hasError('minlength')">
+                            Mínimo 8 caracteres.
+                        </p>
+                        <p *ngIf="passField?.hasError('maxlength')">
+                            Máximo 15 caracteres.
+                        </p>
+
+                        <p *ngIf="checkPassDifferent">
+                            Las contraseñas deben ser iguales.
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <small id="contrasena2" class="form-text text-white"> Reingrese la contraseña</small>
+                    <input type="password" style="color: white;" class="form-control casilla2" formControlName="clave" [(ngModel)]="usuario.contrasena" />
+                    <small id="passwordlHelp" class="form-text text-muted">Debe tener entre 8 y 15 caracteres.</small>
+                    <div *ngIf="passField?.errors  && passField?.dirty" class="text-danger">
+                        <p *ngIf="passField?.hasError('required')">
+                            La contraeña es requerida.
+                        </p>
+                        <p *ngIf="passField?.hasError('minlength')">
+                            Mínimo 8 caracteres.
+                        </p>
+                        <p *ngIf="passField?.hasError('maxlength')">
+                            Máximo 15 caracteres.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="customFile" style="color: white">Adjunta aqui una captura de tu DNI</label>
+                    <input type="file" class="form-control" id="customFile" />
+                </div>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1" style="color:white">
+                    Acepto los <a href="#">terminos y condiciones</a>
+                </label>
+                </div>
+                <br>
+                <button class="w-100 btn-lg boton text-white" type="submit">
+             Registrarse
+            </button>
+                <span style="color: white;">Ya tienes una cuenta?</span>
+                <a href="/inicio-sesion" class="text-decoration-none"> Iniciar sesión</a>
+            </form>
+        </div>
+    </div>
+</div>

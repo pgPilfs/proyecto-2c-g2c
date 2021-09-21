@@ -12,6 +12,11 @@ import { TransferenciaComponent } from './pages/transferencia/transferencia.comp
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UltMovComponent } from './pages/ultMovimientos/ult-mov/ult-mov.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LocalidadService } from './service/localidad.service';
+import { ClienteService } from './service/cliente.service';
 
 
 @NgModule({
@@ -23,6 +28,8 @@ import { UltMovComponent } from './pages/ultMovimientos/ult-mov/ult-mov.componen
     PagBienvenidaComponent,
     LoginComponent,
     UltMovComponent,
+    RegisterComponent,
+    InicioSesionComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +37,10 @@ import { UltMovComponent } from './pages/ultMovimientos/ult-mov/ult-mov.componen
     NgbModule,
     LayoutModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule, 
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ClienteService, LocalidadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
