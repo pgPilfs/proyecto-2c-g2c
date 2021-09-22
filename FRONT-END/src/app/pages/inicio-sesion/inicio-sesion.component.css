@@ -1,64 +1,72 @@
-.login {
-    width: fit-content;
-    border-radius: 0.5rem;
-    padding: 2rem;
-    margin: 5rem auto;
+.background {
+    min-height: 100vh;
     height: auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient( to right, rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.5)), url(../inicio-sesion/phone.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-.login button {
-    text-align: center;
+.card {
+    background-color: rgba(245, 245, 245, 0.1);
+    border-radius: 2.5rem;
 }
 
-.bienvenida {
-    color: #2182C9;
-    text-align: center;
-    font-size: 2em;
+.card_login {
+    margin: 2rem 0 0 0;
 }
 
-input {
-    width: 17rem;
-    height: 1rem;
-    font-size: 1.2em;
-    margin: 5px;
-    padding: 10px;
-}
-
-label {
-    color: #2182C9;
-    padding: 10px;
-    margin: 10px;
-    font-size: 1.2em;
-}
-
-input:focus,
-input:active {
-    background-color: #2182C9;
-    color: #ffff;
-    border-color: #ffff;
-}
-
-button,
-a {
-    background-color: #2182C9;
-    width: 10rem;
-    height: 3rem;
-    font-size: 1.2em;
-    color: #ffff;
-    margin: 7px;
+.card-body input {
     border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: white;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
-button:hover,
-button:focus,
-button:active {
-    background-color: #ffff;
-    width: 10rem;
-    height: 3rem;
-    font-size: 1.2rem;
-    color: #2182C9;
-    margin: 7px;
-    border-radius: 5px;
-    border-color: #2182C9;
+h1,
+p {
+    color: rgb(241, 241, 241);
+}
+
+ ::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+button {
+    background-color: #EB7329;
+    border: none;
+    border-radius: 5rem;
+    padding: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+button:disabled {
+    background-color: #EB7329;
+}
+
+.p {
+    font-weight: 200;
+    margin-top: 1.8rem;
+}
+
+a {
+    font-weight: 600;
+    color: white;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.pass {
+    margin-top: -0.7rem
+}
+
+.btn {
+    margin-top: -0.6rem
 }

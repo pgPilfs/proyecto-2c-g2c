@@ -1,53 +1,53 @@
-<section class="section-login">
-    <div class="container-fluid " style='height:535px;'>
-        <div class="card login">
-            <h2 class="bienvenida">
-                Te damos la bienvenida <br />a <strong>PIL MONEY - 2021</strong>
-            </h2>
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate>
-                <div class="form-group my-4">
-                    <div class="form-floating">
-                        <input type="email" class="form-control" formControlName="email" id="floatingInput" placeholder="Ingrese su email" />
-                        <label for="floatingInput"><i class="fa fa-envelope"></i>  Correo Electronico</label>
-                        <div *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email" style="color: red; margin: 6px;">
-                            Por favor, ingrese bien su correo electronico
+<div class="background">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-6 col-lg-5 mx-auto">
+                <div class="card_login">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="logo"></div>
+                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off" novalidate>
+
+                                <h1 class="mt-3 mb-2">Iniciar Sesión</h1>
+                                <p class="mb-4">Por favor, ingrese su email y contraseña.</p>
+
+                                <!--Email-->
+                                <div class="email">
+                                    <input type="email" class="form-control" formControlName="email" id="floatingInput" placeholder="Ingrese su email" />
+                                    <label for="floatingInput"><i class="fa fa-envelope"></i>  Correo Electronico</label>
+                                    <div *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email" style="color: red; margin: 6px;">
+                                        Por favor, ingrese bien su correo electronico.
+                                    </div>
+                                </div>
+                                <br>
+                                <!--Contraseña-->
+                                <div class="pass">
+
+                                    <input type="password" class="form-control" formControlName="password" placeholder="Ingrese su contraseña" />
+                                    <label for="floatingInput"><i class="fa fa-unlock"></i>  Contraseña</label>
+
+                                </div>
+
+                                <div *ngIf="loginForm.controls.password?.errors  && loginForm.controls.password?.dirty" style="color: red; margin: 6px;"><br>
+                                    <p *ngIf="loginForm.controls.password?.hasError('required')">
+                                        La contraeña es requerida.
+                                    </p>
+                                    <p *ngIf="loginForm.controls.password?.hasError('minlength')">
+                                        La contraseña debe tener al menos 8 caracteres.
+                                    </p>
+                                    <p *ngIf="loginForm.controls.password?.hasError('maxlength')">
+                                        La contraseña debe terner como máximo 15 caracteres.
+                                    </p>
+                                </div>
+                                <br>
+                                <!--Boton login-->
+                                <button class="btn btn-dark w-50" [disabled]="loginForm.invalid">Ingresar</button>
+                                <!--No esta registrado-->
+                                <p class="p"> ¿No tienes una cuenta? <a class="registrarse" routerLink="/register">Registrate</a></p>
+                            </form>
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group my-4">
-                    <div>
-                        <div class="form-floating" style="display:flex;">
-                            <input type="password" class="form-control" formControlName="password" placeholder="Ingrese su contraseña" />
-                            <label for="floatingInput"><i class="fa fa-unlock"></i>  Contraseña</label><i class="fa fa-eye-slash" style="margin-top: 23px; color: #2182C9;"></i>
-                        </div>
-
-                        <div *ngIf="loginForm.controls.password?.errors  && loginForm.controls.password?.dirty" style="color: red; margin: 6px;"><br>
-                            <p *ngIf="loginForm.controls.password?.hasError('required')">
-                                La contraeña es requerida.
-                            </p>
-                            <p *ngIf="loginForm.controls.password?.hasError('minlength')">
-                                La contraseña debe terner al menos 8 caracteres.
-                            </p>
-                            <p *ngIf="loginForm.controls.password?.hasError('maxlength')">
-                                La contraseña debe terner como máximo 15 caracteres.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-center" style="text-align: center; margin: 15px;">
-                    <!-- <button type="submit" class="btn ingresar text-center" routerLink="/home">
-                        Ingresar
-                    </button> -->
-                    <a class="btn btn-primary" (click)="cambiarEstado()" href="/home" role="button">Ingresar</a>
-                    <!-- <button type="submit" class="btn ingresar text-center" routerLink="/sig-in">
-                        Registrarse
-                    </button> -->
-                    <a class="btn btn-primary" routerLink="/register" role="button">Registrarse</a>
-                </div>
-            </form>
-
+            </div>
         </div>
     </div>
-</section>
