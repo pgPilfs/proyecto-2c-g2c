@@ -1,0 +1,77 @@
+  body {
+    min-height: 150vh;
+    height: auto;
+    background-image: url(./img/imagenPagos.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    /*margin:45%;*/
+  }
+  
+  .container {
+    position: absolute;
+    height: 300px;
+    top: 60px;
+    left: calc(50% - 475px);
+  }
+  
+  .card {
+    display: flex;
+    height: 280px;
+    width: 200px;
+    background-color: #EB7329;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+    margin-top: 100px;
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+  }
+  
+  .card:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1)
+  }
+  
+  .title {
+    color: white;
+    font-weight: 300;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+  }
+  
+  .card .imagen {
+    width: 100px; height: 100px;
+    position: absolute;
+    left: 45px;
+    top: 70px;
+  }
+
+  .pagar {
+    background-color:rgba(242, 167, 127, 0.7);
+    font-weight: 200;
+    border-radius: 10px;
+    position: absolute;
+    left: 60px;
+    top: 200px;
+  }
+
+  .servicios{
+    background: rgba(250, 122, 1, 0.8);
+    margin-right: 12px;
+    margin-top: 50px;
+    /*margin: 100px;*/
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+    
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .row{
+      margin-left: 50%;
+      width: 25%;
+    }
+  }

@@ -8,31 +8,29 @@ import {Validators, FormGroup, FormBuilder} from '@angular/forms';
 })
 
 export class ContactoComponent implements OnInit {
-  mensajeForm: FormGroup;
-  mostrar = false;
+  contactoForm: FormGroup;
+  mostrar1 = false;
   mostrar2 = false;
-  //mostrar3 = false;
 
   onClick1(){
-    this.mostrar = !this.mostrar; 
+    this.mostrar1 = !this.mostrar1; 
   }
   onClick2(){
     this.mostrar2 = !this.mostrar2;
   }
-  /*onClick3(){
-    this.mostrar3 = !this.mostrar3;
-  }*/
     
   constructor(private formBuilder: FormBuilder) {
-    this.mensajeForm = this.formBuilder.group({
-      usuario: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-      password: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+    this.contactoForm = this.formBuilder.group({
+      nombre: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      telefono:['',Validators.required],
+      mensaje: ['', Validators.compose([Validators.required, Validators.maxLength(300)])]
     })
   }
-  
-  
-    
-  
+
+  enviar(values){
+    console.log(values);
+  }
 
   ngOnInit(): void {
   }

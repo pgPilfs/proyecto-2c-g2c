@@ -6,7 +6,7 @@
       <button (click)="onClick1()" class="btn">Preguntas Frecuentes</button>
       <button (click)="onClick2()" class="btn">Desarrolladores</button>
     </p>
-    <div *ngIf="mostrar">
+    <div *ngIf="mostrar1">
       <div class="preguntas-frecuentes">
         <ngb-accordion #acc="ngbAccordion">
           <ngb-panel id="toggle-1" title="¿Qué es GC PilMoney?">
@@ -43,27 +43,20 @@
       <div class="desarrolladores">
         <p><b>CONOCE A NUESTRO EQUIPO</b></p>
         <div class='circle-container'>
-          <a class='center'><img src="https://i.ibb.co/w7FRWH8/logoApp.png"></a>
-          <a class='deg2'><img
-              src="https://img.freepik.com/vector-gratis/perfil-avatar-mujer-icono-redondo_24640-14047.jpg?size=338&ext=jpg"
-              ngbPopover="Scrum Master - Desarrolladora Full Stack" placement="top" triggers="mouseenter:mouseleave"
-              popoverTitle="BRITOS Mariela"></a>
+          <!--<a class='center'><img src="https://i.ibb.co/w7FRWH8/logoApp.png"></a>-->
           <a class='deg3'><img
-              src="https://img.freepik.com/vector-gratis/perfil-avatar-mujer-icono-redondo_24640-14047.jpg?size=338&ext=jpg"
+              src="https://i.ibb.co/yQYMCB1/Mariela.jpg"
+              ngbPopover="Scrum Master - Desarrolladora Full Stack" placement="bottom" triggers="mouseenter:mouseleave"
+              popoverTitle="BRITOS Mariela"></a>
+          <a class='deg6'><img
+              src="https://i.ibb.co/c6g3jzp/Maria-modified.png"
               ngbPopover="Desarrolladora Full Stack" placement="right" triggers="mouseenter:mouseleave"
               popoverTitle="ALTAMIRANO Maria Angela"></a>
-          <a class='deg4'><img
-              src="https://dietisticavalencia.com/wp-content/uploads/2019/09/perfil-avatar-hombre-icono-redondo.jpg"
-              ngbPopover="Desarrollador Full Stack" placement="left" triggers="mouseenter:mouseleave"
-              popoverTitle="BAZAN COSTILLA Mariano"></a>
           <a class='deg5'><img
-              src="https://dietisticavalencia.com/wp-content/uploads/2019/09/perfil-avatar-hombre-icono-redondo.jpg"
+              src="https://i.ibb.co/dJxXzst/Nico-modified.png"
               ngbPopover="Desarrollador Full Stack" placement="left" triggers="mouseenter:mouseleave"
               popoverTitle="ESPÍNDOLA Nicolás"></a>
-          <a class='deg6'><img
-              src="https://dietisticavalencia.com/wp-content/uploads/2019/09/perfil-avatar-hombre-icono-redondo.jpg"
-              ngbPopover="Desarrollador Full Stack" placement="right" triggers="mouseenter:mouseleave"
-              popoverTitle="ZAPATA Julian"></a>
+          <a class='deg2'><img src="https://i.ibb.co/w7FRWH8/logoApp.png"></a>
         </div>
         <br><br>
       </div>
@@ -116,11 +109,38 @@
       </div>
       <div class="row">
         <div class="col-md-6 align-items-center">
-          <form action="">
-            <input type="text" name="Nombre" placeholder="Nombre">
-            <input type="text" name="Email" placeholder="Email">
-            <input type="text" name="Telefono" placeholder="Teléfono">
-            <textarea type="text" name="Mensaje" placeholder="Escriba aquí su mensaje"></textarea>
+          <form [formGroup]="contactoForm" (ngSubmit)="enviar(contactoForm.value)">
+            <div class="nombre">
+              <input type="text" formControlName="nombre" class="form-control nombre" placeholder="Nombre">
+              <div class="text-danger"
+                *ngIf="contactoForm.get('nombre').hasError('required') && contactoForm.get('nombre').touched">
+                El campo 'Nombre' es requerido.
+              </div>
+            </div>
+            <div class="mail">
+              <input type="text" formControlName="mail" class="form-control mail" placeholder="Email">
+              <div class="text-danger"
+                *ngIf="contactoForm.get('email').hasError('required') && contactoForm.get('email').touched">
+                El campo 'Email' es requerido.
+              </div>
+            </div>
+            <div class="telefono">
+              <input type="text" formControlName="telefono" class="form-control telefono" placeholder="Teléfono">
+              <div class="text-danger"
+                *ngIf="contactoForm.get('telefono').hasError('required') && contactoForm.get('telefono').touched">
+                El campo 'Teléfono' es requerido.
+              </div>
+            </div>
+            <div class="mensaje">
+              <textarea type="text" formControlName="mensaje" class="form-control mensaje" placeholder="Escriba aquí su mensaje"></textarea>
+              <div class="text-danger"
+                *ngIf="contactoForm.get('mensaje').hasError('required') && contactoForm.get('mensaje').touched">
+                El campo 'Mensaje' es requerido.
+              </div>
+              <div *ngIf="contactoForm.get('mensaje').hasError('maxlength')">
+                El campo 'Mensaje' permite un máximo de 300 caracteres.
+              </div>
+            </div>
             <input type="button" value="Enviar" id="boton">
           </form>
         </div>

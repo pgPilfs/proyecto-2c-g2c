@@ -81,7 +81,7 @@ p{
   }
   
   img {
-    border-radius: 400px;
+    border-radius: 500px;
     width: 100px;
   }
   
@@ -102,8 +102,8 @@ p{
   /* Abajo a la der */
   .deg3 img {
     position: relative;
-    top: 120px;
-    left: 100px;
+    top: 0px;
+    left: 0px;
   } 
   /* Abajo a la izq */
   .deg4 img { 
@@ -114,13 +114,13 @@ p{
   /* Arriba a la izq */
   .deg5 img {
     position: relative;
-    bottom: 50px;
+    bottom: 0px;
     right: 150px;
   }
   /* Arriba a la der */
   .deg6 img {
     position: relative;
-    bottom: 50px;
+    bottom: 0px;
     left: 150px;
   }
 
