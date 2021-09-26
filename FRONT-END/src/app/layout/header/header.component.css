@@ -1,5 +1,5 @@
-@media (min-width: 768px){
-    .alineado{
+@media (min-width: 768px) {
+    .alineado {
         display: flex;
         justify-content: flex-end;
         align-content: flex-end;
@@ -8,6 +8,6 @@
     }
 }
 
-.orange{
+.orange {
     background-color: #EB7329;
 }
