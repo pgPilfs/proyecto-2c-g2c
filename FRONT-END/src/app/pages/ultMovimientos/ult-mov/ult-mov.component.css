@@ -38,6 +38,10 @@
     border: none;
     margin: 10px;
   }
+  hr{
+    background-color: #eb7329;
+    opacity: 65%;
+  }
   
   .nav-item{
     text-align: center;

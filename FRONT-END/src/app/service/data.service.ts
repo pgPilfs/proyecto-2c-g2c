@@ -4,7 +4,7 @@ import { EventEmitter, Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-menuEnabled :boolean=true;
-bandera$=new EventEmitter<boolean>(); //observable
+
+  bandera$=new EventEmitter<number>(); //observable
   constructor() { }
 }

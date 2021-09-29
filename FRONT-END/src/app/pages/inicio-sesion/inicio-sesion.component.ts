@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from 'src/app/service/data.service';
+import { ClienteService } from '../../service/cliente.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -11,8 +14,9 @@ import { DataService } from 'src/app/service/data.service';
 export class InicioSesionComponent{
 
   loginForm: FormGroup;
+  idUsuario: number;
 
-  constructor(private dataService:DataService) {
+  constructor(private dataService:DataService, private clienteService: ClienteService, private router: Router) {
 
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -22,11 +26,33 @@ export class InicioSesionComponent{
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log(this._v());
+     this.clienteService.obtenerUsuarios().subscribe((res)=>{
+      for(const usuario of res){
+        if(usuario.Email === this.loginForm.value.email){
+          if(usuario.Contrasena === this.loginForm.value.password){
+            this.router.navigate(['home']);
+            this.idUsuario = usuario.Id;
+            this.cambiarEstado();
+          }else{
+            //mostrar mensaje pop-up de password incorrecta
+            console.log("contraseña incorrecta")
+          }
+        }else{
+          //mostrar mensaje pop-up de email no encontrado, por favor registrate
+          // console.log("email no encontrado")
+        }
+      }
+     })
+
     }
   }
-  _v() {
-    return this.loginForm.value;
+
+  get emailField() {
+    return this.loginForm.get("email");
+  }
+
+  get emailInvalid() {
+    return this.passField?.touched && !this.passField.valid;
   }
 
   get passField() {
@@ -38,6 +64,6 @@ export class InicioSesionComponent{
   }
 
   cambiarEstado(){
-    this.dataService.bandera$.emit(true);
+    this.dataService.bandera$.emit(this.idUsuario);
   }
 }

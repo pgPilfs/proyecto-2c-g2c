@@ -1,6 +1,9 @@
 import { Component, OnInit} from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import {filter} from 'rxjs/operators';
+import { DataService } from '../../service/data.service';
+import { ClienteService, Persona } from '../../service/cliente.service';
+import { convertCompilerOptionsFromJson } from 'typescript';
 
 @Component({
   selector: 'adm-header',
@@ -10,29 +13,26 @@ import {filter} from 'rxjs/operators';
 export class HeaderComponent implements OnInit {
 
   public isCollapsed = true;
-  public blnDisplayMenu = true;
+  public expression:boolean = false;
+  cliente: Persona;
 
-  toggleMenu(res?: string) {
+  toggleMenu() {
     this.isCollapsed = !this.isCollapsed;
-    if(res){
-      // this.login.logout();
-    }
   }
 
-  constructor(private router: Router) { 
-    // router.events.pipe(
-    //   filter((event: any) => event instanceof NavigationEnd)
-    // )
-    // .subscribe(event => {
-    //   if(event.url === "/login" ){
-    //     this.blnDisplayMenu = false;
-    //   }else{
-    //     this.blnDisplayMenu = true;    
-    //   }
-    // });
-  }
+  constructor(private dataService: DataService, private clienteService: ClienteService) {}
 
   ngOnInit(): void {
+    this.dataService.bandera$.subscribe((res)=>{
+      this.clienteService.obtenerUsuario(res).subscribe((res2)=>{
+        this.cliente = res2;
+        this.expression = true;
+      })
+    })
+  }
+
+  salir(){
+    this.expression = false;
   }
 
 

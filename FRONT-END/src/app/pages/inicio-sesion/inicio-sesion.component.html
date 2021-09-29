@@ -15,8 +15,13 @@
                                 <div class="email">
                                     <input type="email" class="form-control" formControlName="email" id="floatingInput" placeholder="Ingrese su email" />
                                     <label for="floatingInput"><i class="fa fa-envelope"></i>  Correo Electronico</label>
-                                    <div *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email" style="color: red; margin: 6px;">
-                                        Por favor, ingrese bien su correo electronico.
+                                    <div *ngIf="loginForm.controls.email?.errors && emailInvalid" style="color: red; margin: 6px;">
+                                        <p *ngIf="emailField?.hasError('required')">
+                                            El email es requerido.
+                                        </p>
+                                        <p *ngIf="emailField?.hasError('email')">
+                                            El formato del email debe ser válido.
+                                        </p>
                                     </div>
                                 </div>
                                 <br>
@@ -30,7 +35,7 @@
 
                                 <div *ngIf="loginForm.controls.password?.errors  && loginForm.controls.password?.dirty" style="color: red; margin: 6px;"><br>
                                     <p *ngIf="loginForm.controls.password?.hasError('required')">
-                                        La contraeña es requerida.
+                                        La contraseña es requerida.
                                     </p>
                                     <p *ngIf="loginForm.controls.password?.hasError('minlength')">
                                         La contraseña debe tener al menos 8 caracteres.
@@ -43,7 +48,7 @@
                                 <!--Boton login-->
                                 <button class="btn btn-dark w-50" [disabled]="loginForm.invalid">Ingresar</button>
                                 <!--No esta registrado-->
-                                <p class="p"> ¿No tienes una cuenta? <a class="registrarse" routerLink="/register">Registrate</a></p>
+                                <p class="p"> ¿No tienes una cuenta? <a class="registrarse" routerLink="/registro">Registrate</a></p>
                             </form>
                         </div>
                     </div>

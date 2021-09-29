@@ -5,27 +5,42 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LocalidadService {
-  url="https://localhost:44332/api/Provincia";
-  url2="https://localhost:44332/api/Localidad";
+  url1="http://www.webapigcpil.somee.com/api/Pais"
+  url2="http://www.webapigcpil.somee.com/api/Provincia";
+  url3="http://www.webapigcpil.somee.com/api/Localidad";
+
   //private provincias : ProvinciaI[] = [...];
   //private localidades : LocalidadI[] = [...];
   constructor(private http: HttpClient ) { }
 
+  ObtenerPaises()
+  {
+    return this.http.get<any>(this.url1);
+  }
+
   ObtenerProvincias()
   {
-    return this.http.get<any>(this.url);
+    return this.http.get<any>(this.url2);
   }
 
   ObtenerLocalidades()
   {
-    return this.http.get<any>(this.url2);
+    return this.http.get<any>(this.url3);
   }
+  
+}
+
+export class PaisI
+{
+  Id_pais!: number;
+  Nombre!: string;
 }
 
 export class ProvinciaI
 {
   Id_provincia!: number;
-  Provinciaa!: string;
+  Nombre!: string;
+  Id_pais!: number;
 }
 
 export class LocalidadI

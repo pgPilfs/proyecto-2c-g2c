@@ -2,9 +2,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { Persona, ClienteService, Cuenta } from 'src/app/service/cliente.service';
-import { LocalidadI, LocalidadService, ProvinciaI } from 'src/app/service/localidad.service';
+import { Persona, ClienteService} from 'src/app/service/cliente.service';
+import { LocalidadI, LocalidadService, PaisI, ProvinciaI } from 'src/app/service/localidad.service';
+import { Usuario } from '../../models/usuario';
+
 
 @Component({
   selector: 'app-register',
@@ -14,27 +15,31 @@ import { LocalidadI, LocalidadService, ProvinciaI } from 'src/app/service/locali
 export class RegisterComponent implements OnInit{
 
   form: FormGroup;
-  signupForm: FormGroup; 
 
   usuario: Persona = new Persona();
-  cuenta: Cuenta = new Cuenta();
   provincias!: ProvinciaI[];
   localidades!: LocalidadI[];
-  localidades4!: LocalidadI[];
+  paises: PaisI[];
+  // localidades4!: LocalidadI[];
 
-  public selectedProvincia: ProvinciaI = { Id_provincia: 0, Provinciaa: ''};
+  public selectedPais: PaisI = { Id_pais: 0, Nombre: ''};
+  public selectedProvincia: ProvinciaI = { Id_provincia: 0, Nombre: '', Id_pais: 0};
   public selectedLocalidad: LocalidadI = { Id_localidad: 0, Nombre: '', Cosdigo_postal: 0, Id_provincia: 0};
-  mostrar_localidades=false;
+
+  contrasena2: string ="";
+  checkPass: boolean = true;
+  errorRegister: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private clienteService: ClienteService, private router: Router, private localidadService: LocalidadService) { 
     this.form= this.formBuilder.group(
       {
-        nombre:['',[Validators.required]],
-        apellido: ['', [Validators.required]],
+        nombre:['',[Validators.required, Validators.minLength(3)]],
+        apellido: ['', [Validators.required, Validators.minLength(3)]],
         nacimiento:['', [Validators.required]],
-        dni:['', [Validators.required]],
-        cuil:['', [Validators.required, Validators.minLength(10), Validators.maxLength(15)]],
+        dni:['', [Validators.required, Validators.minLength(7), Validators.maxLength(8)]],
+        cuil:['', [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
         email:['', [Validators.required, Validators.email]],
+        domicilio:['', [Validators.required, Validators.minLength(3)]],
         contrasena:['',[Validators.required, Validators.minLength(8), Validators.maxLength(15)]],
         contrasena2:['',[Validators.required, Validators.minLength(8), Validators.maxLength(15)]],
       }
@@ -42,95 +47,81 @@ export class RegisterComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this.localidadService.ObtenerPaises().subscribe(
+      data=> {
+        this.paises=data;
+      }
+    );
     this.localidadService.ObtenerProvincias().subscribe(
       data=> {
-        console.log(data);
         this.provincias=data;
-        console.log(this.provincias);
       }
     );
 
     this.localidadService.ObtenerLocalidades().subscribe(
       data=> {
-        console.log(data);
-        this.localidades=data;
-        console.log(this.localidades);
+        const resultado = data.filter(item => item.idProvincia == 1)
+        this.localidades = resultado;
       }
     );
+
+    this.checkPassDifferent();
+
+    this.usuario.genero = "Femenino";
+    this.usuario.nacionalidad = "Argentina";
+    this.usuario.idLocalidad = 1;
   }
 
   onSelectNacionalidad(nacionalidad: any):void {
-    console.log(nacionalidad);
     this.usuario.nacionalidad = nacionalidad;
-    console.log(this.usuario.nacionalidad);
   }
 
   onSelectGenero(genero: any):void {
-    console.log(genero);
     this.usuario.genero = genero;
-    console.log(this.usuario.genero);
   }
 
-  onSelect(id_provincia: any):void {
-    console.log(id_provincia);
+  onSelectPais(id_pais: any):void {
+    console.log(id_pais);
+  }
+
+  onSelectProvincia(id_provincia: any):void {
     this.localidadService.ObtenerLocalidades().subscribe(
       data=> {
-        this.localidades4=data;
-        this.localidades = this.localidades4.filter(item => item.Id_provincia == id_provincia);
-        this.mostrar_localidades = true;
-        console.log(this.localidades);
+        const resultado = data.filter(item => item.idProvincia == id_provincia)
+        this.localidades = resultado;
       }
     );
   }
 
-  onSelectLocalidad(id_localidad: any):void{
-    console.log(id_localidad);
-    this.usuario.id_localidad = id_localidad;
-    console.log(this.usuario.id_localidad);
-  }
-
-  onCuenta():void {
-    console.log(this.cuenta);
-    this.clienteService.onCrearCuenta(this.cuenta).subscribe(
-      data => {
-        console.log(data);
-    })
-  }
-
-  onId() {
-    this.clienteService.onObtenerId(this.usuario.cuil).subscribe(
-      data=>{
-        this.cuenta.id_cliente= 1046;
-        console.log(this.cuenta.id_cliente);
-        this.cuenta.cvu = "0000"+ (1046).toString();
-        this.cuenta.numero_de_cuenta = "0000"+ (1046).toString();
-        this.cuenta.saldo = 0;
-        this.cuenta.id_tipo_cuenta = 1;
-        this.onCuenta();
-      }
-    );
+  onSelectLocalidad(id_localidad: number):void{
+    this.usuario.idLocalidad = id_localidad;
   }
 
 
-  onEnviar(event: Event, usuario:Persona): void
+  onEnviar(event: Event, usuario:any): void
   {
     event.preventDefault;
 
+    const cliente = JSON.stringify(usuario);
+
     if (this.form.valid)
     {
-      console.log(usuario);
-      this.clienteService.onCrearRegistro(usuario).subscribe(
+      this.clienteService.onCrearRegistro(cliente).subscribe(
         data => {
-          console.log(data);
-      })
+          if(data === 0){
+            this.errorRegister = true;
+          }else{
+           this.router.navigate(['iniciosesion']); 
+          }
+        },error =>{
+          this.errorRegister = true;
+        }
+      )
     }
     else
     {
       this.form.markAllAsTouched(); 
     }
-    
-    this.onId();
-      
 
   }
 
@@ -206,19 +197,16 @@ export class RegisterComponent implements OnInit{
     return this.mailField?.touched && !this.mailField.valid;
   }
 
-  get checkPassField() {
-    return this.form.get("contrasena");
+  get domicilioField() {
+    return this.form.get("domicilio");
   }
 
-  checkPassDifferent () {
-    let result;
-    if (this.passField != this.checkPassField) {
-      result = true;
-    }
-    else {
-      result = false; 
-    }
-    return result;
+  get domicilioInvalid() {
+    return this.mailField?.touched && !this.mailField.valid;
+  }
+
+  get checkPassField() {
+    return this.form.get("contrasena2");
   }
 
   get passField() {
@@ -228,5 +216,34 @@ export class RegisterComponent implements OnInit{
   get passInvalid() {
     return this.passField?.touched && !this.passField.valid;
   }
+  get pass2Invalid() {
+    return this.checkPassField?.touched && !this.checkPassField.valid;
+  }
+
+  checkPassDifferent () {
+    this.checkPassField.valueChanges.subscribe((res)=>{
+      if(res.length >= 8){
+        let result;
+        if (this.passField.value != this.checkPassField.value) {
+          result = false;
+          this.form.controls['contrasena2'].setErrors({'incorrect': true});
+        }
+        else {
+          result = true; 
+          
+        }
+        this.checkPass =result;
+      }
+    })
+  }
+
+  mostrarRegistro(){
+    this.errorRegister = false;
+  }
+
+
+
+  
 
 }
+

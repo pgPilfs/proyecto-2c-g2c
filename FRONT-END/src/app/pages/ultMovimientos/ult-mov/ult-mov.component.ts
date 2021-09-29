@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../../service/data.service';
+import { ClienteService, Cuenta, Movimiento } from '../../../service/cliente.service';
 
 @Component({
   selector: 'app-ult-mov',
@@ -7,10 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UltMovComponent implements OnInit {
 
-  constructor() { }
-  countries = COUNTRIES;
+  cuenta: Cuenta ={CVU:"", Saldo:0};
+  cliente: any;
+  movimientos!: Movimiento[];
+
+
   variable: boolean = true;
+  mostrarCvu: boolean= false;
+
+  constructor(private dataService: DataService, private clienteService: ClienteService) { }
+
   ngOnInit(): void {
+    this.dataService.bandera$.subscribe((res)=>{
+      this.clienteService.obtenerUsuario(res).subscribe((res2)=>{
+        this.cliente = res2;
+        this.clienteService.obtenerCuenta(this.cliente.IdCuenta).subscribe((res3)=>{
+          console.log(res3);
+          this.cuenta = {CVU: res3.CVU, Saldo: res3.Saldo};
+          console.log(this.cuenta);
+        })
+        this.clienteService.obtenerMovimientos(this.cliente.IdCuenta).subscribe((res4)=>{
+          this.movimientos = res4;
+          console.log(this.movimientos)
+        })
+      })
+    })
   }
 
   cambio(){
@@ -19,36 +42,4 @@ export class UltMovComponent implements OnInit {
 
 
 }
-export interface Country {
-  name: string;
-  flag: string;
-  area: number;
-  population: number;
-}
 
-const COUNTRIES: Country[] = [
-  {
-    name: 'Russia',
-    flag: 'f/f3/Flag_of_Russia.svg',
-    area: 17075200,
-    population: 146989754
-  },
-  {
-    name: 'Canada',
-    flag: 'c/cf/Flag_of_Canada.svg',
-    area: 9976140,
-    population: 36624199
-  },
-  {
-    name: 'United States',
-    flag: 'a/a4/Flag_of_the_United_States.svg',
-    area: 9629091,
-    population: 324459463
-  },
-  {
-    name: 'China',
-    flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
-    area: 9596960,
-    population: 1409517397
-  }
-];

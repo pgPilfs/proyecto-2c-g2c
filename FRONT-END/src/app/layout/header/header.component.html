@@ -1,23 +1,16 @@
 <header>
     <nav class="navbar navbar-expand-md orange navbar-dark">
       <a routerLink="/bienvenida"><span class="navbar-brand">GC PilMoney</span></a>
-    
+      <span class="text-white" *ngIf="expression"><strong>Bienvenido/a {{cliente.Nombre}} {{cliente.Apellido}}</strong></span>
       <button class="navbar-toggler navbar-toggler-right" type="button" aria-controls="appNavigation" aria-expanded="!isCollapsed" aria-label="Toggle navigation" (click)="toggleMenu()">
         <span class="navbar-toggler-icon"></span>
       </button>
     
       <div class="collapse navbar-collapse alineado" id="appNavigation" [ngbCollapse]="isCollapsed">
-        <div class="navbar-nav mr-auto" *ngIf="blnDisplayMenu">
-          <a (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/login" routerLinkActive="active">Login</a>
-          <a (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/registro" routerLinkActive="active">Registro</a>
-          <!-- <div class="nav-item dropdown" ngbDropdown>
-            <a class="nav-link dropdown-toggle btn-lg"  id="dropdownSede" ngbDropdownToggle>Operaciones</a>
-            <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownSede">
-              <a class="dropdown-item" routerLink="/" (click)="toggleMenu()">Agregar Dinero</a>              
-              <a class="dropdown-item" routerLink="/" (click)="toggleMenu()">Retirar Dinero</a>
-            </div>
-          </div>
-          <a (click)="toggleMenu('salir')" class="nav-item nav-link btn-lg" routerLink="/login" routerLinkActive="active">Salir</a> -->
+        <div class="navbar-nav mr-auto">
+            <a *ngIf="!expression" (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/iniciosesion" routerLinkActive="active">Inicio Sesion</a>
+            <a *ngIf="!expression" (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/registro" routerLinkActive="active">Registro</a>
+            <a *ngIf="expression" (click)="salir()" class="nav-item nav-link btn-lg" routerLink="/bienvenida" routerLinkActive="active">Salir</a>
         </div>
       </div>
     </nav>

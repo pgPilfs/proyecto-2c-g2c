@@ -1,7 +1,7 @@
 .background {
     min-height: 100vh;
     height: auto;
-    background-image: linear-gradient( to right, rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.5)), url(../inicio-sesion/phone.jpg);
+    background-image: linear-gradient( to right, rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.5)), url(./../../../assets/img/phone.jpg);
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
