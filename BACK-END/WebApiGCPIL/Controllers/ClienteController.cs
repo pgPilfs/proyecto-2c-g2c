@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using WebApiGCPIL.Models;
 
 namespace WebApiGCPIL.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ClienteController : ApiController
     {
         // GET: api/Cliente
-        public IEnumerable<string> Get()
+        public IEnumerable<Cliente> Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorCliente gestorCliente = new GestorCliente();
+            return gestorCliente.BuscarClientes();
         }
 
         // GET: api/Cliente/5
@@ -24,18 +23,37 @@ namespace WebApiGCPIL.Controllers
         }
 
         // POST: api/Cliente
-        public void Post([FromBody]string value)
+
+        int idCliente = 0;
+        public int Post([FromBody] Cliente value)
         {
+            GestorCliente gestorCliente = new GestorCliente();
+            idCliente = gestorCliente.InsertarCliente(value);
+            return idCliente;
         }
+
+        // POST: api/Login??
+
+        //string mensaje = "";
+        //public string Post([FromBody] Login value)
+        //{
+        //    GestorCliente gestorCliente = new GestorCliente();
+        //    mensaje = gestorCliente.consultarCliente(value);
+        //    return mensaje ;
+        //}
 
         // PUT: api/Cliente/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        //public void Put(int id, [FromBody]Cliente value)
+        //{
+        //    GestorCliente gestorCliente = new GestorCliente();
+        //    gestorCliente.ActualizarCliente(id, value);
+        //}
 
         // DELETE: api/Cliente/5
-        public void Delete(int id)
-        {
-        }
+        //public void Delete(int id)
+        //{
+        //    GestorCliente gestorCliente = new GestorCliente();
+        //    gestorCliente.EliminarCliente(id);
+        //}
     }
 }
