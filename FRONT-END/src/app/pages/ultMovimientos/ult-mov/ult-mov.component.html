@@ -40,11 +40,12 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let movimiento of movimientos">
-                  <td scope="row">{{ movimiento.idTipoMovimiento }}</td>
+                  <td scope="row">{{ movimiento.Motivo }}</td>
                   <td>{{ movimiento.Monto | currency }}</td>
                   <td>{{ movimiento.fechaHora |  date:'short' }}</td>
                   <td>
-                    <img [src]="'https://upload.wikimedia.org/wikipedia/commons/argentina' + country.flag" class="mr-2" style="width: 20px">
+                    <img *ngIf="movimiento.idTipoMovimiento == 2" [src]="imagenIngreso" class="mr-2" style="width: 30px">
+                    <img *ngIf="movimiento.idTipoMovimiento == 3" [src]="imagenRetiro" class="mr-2" style="width: 30px">
                   </td>
                 </tr>
                 </tbody>

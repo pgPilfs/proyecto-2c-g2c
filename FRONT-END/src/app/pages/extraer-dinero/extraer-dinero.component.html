@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 mx-auto">
                 <div class="card_registro mt-5 mb-5">
-                    <div class="card">
+                    <div class="card" *ngIf="!mostrar">
                         <div class="card-body text-center">
 
                             <h1 class="card-title pb-3" id="title">Extraer dinero</h1>
@@ -12,25 +12,27 @@
 
                                 <div class="p-2">
                                     <label>*Cantidad que desea extraer:</label>
-                                    <input class="form-control" type="string" formControlName="monto" placeholder="Ej. 100.00" />
+                                    <input class="form-control" type="number"  pattern="^\d*(\.\d{0,2})?$" formControlName="monto"
+                                    placeholder="ej. 100.00" />
                                 </div>
-
-                                <div class="p-2">
-                                    <label>Tipo de cuenta en: </label>
-                                    <select class="form-select col-12" aria-label="Default select example" id="select-extraer">
-                                            <option selected value="1">Pesos</option>
-                                           
-                                        </select>
-                                </div>
-
+                                
                                 <!--Validaciones dinero requerido-->
                                 <div class="text-danger d-flex flex-row justify-content-center alig-items-center" *ngIf="ExtraerForm.get('monto').hasError('required') && ExtraerForm.get('monto').touched" id="msj-adv">
                                     *La cantidad es obligatoria.
                                 </div>
 
                                 <!--Validacion monto minimo-->
-                                <div class="text-danger d-flex flex-row justify-content-center alig-items-center" *ngIf="ExtraerForm.get('monto').hasError('min')" id="msj-adv">
-                                    Ingrese un monto válido.
+                                <div class="text-danger d-flex flex-row justify-content-center alig-items-center" *ngIf="ExtraerForm.get('monto').hasError('max')" id="msj-adv">
+                                    Ingrese un monto valido, menor a $50.000
+                                </div>
+
+                                <div class="p-2" >
+                                    <label>Tipo de cuenta en:</label>
+                                    <select class="form-select col-12" aria-label="Default select example" id="select-ingreso">
+                                        <option selected value="1">Pesos</option>
+                                        <!-- <option value="2">Dolar</option>
+                                        <option value="3">BitCoins</option> -->
+                                    </select>
                                 </div>
 
                                 <!--Campo Boton-->
@@ -38,6 +40,16 @@
                                     <button class="btn btn-dark mt-3 mb-3 col-11" [disabled]="ExtraerForm.invalid">Realizar Operación</button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                    <div *ngIf="mostrar" class="card">
+                        <div class="card-body text-center">
+
+                            <h1 class="card-title pb-3" id="title">Retiro de Dinero Exitoso!!</h1>
+                            <div>
+                                <button class="btn btn-dark mt-3 mb-3 col-11" routerLink="../movimientos">Volver al Home</button>
+                                <button class="btn btn-dark mt-3 mb-3 col-11" (click)="mostrarForm()">Retirar nuevamente dinero</button>
+                            </div>   
                         </div>
                     </div>
                 </div>

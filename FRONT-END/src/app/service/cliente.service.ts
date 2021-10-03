@@ -32,6 +32,10 @@ export class ClienteService {
     return this.http.get<any>(`${this.url2}/${idCuenta}`, this.httpOptions);
   }
 
+  onCrearMovimiento(operacion:any):Observable<any>{
+    return this.http.post<any>(this.url2, operacion, this.httpOptions);
+  }
+
 }
 
 export class Persona
@@ -63,7 +67,10 @@ export class Movimiento {
   Monto: number;
   fechaHora: string;
   idTipoMovimiento: number;
-  dibujo: string;
+  idOrigen?: number;
+  idDestion?: number;
+  Motivo?: string;
+  dibujo?: string;
 }
 
 export class Login {

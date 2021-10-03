@@ -22,6 +22,7 @@ import { JwtInterceptor } from './service/auth/interceptor.service';
 import { ErrorInterceptor } from './service/auth/error.service';
 import { IngresarDineroComponent } from './pages/ingresar-dinero/ingresos.component';
 import { ExtraerDineroComponent } from './pages/extraer-dinero/extraer-dinero.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 
 
 
@@ -35,7 +36,8 @@ import { ExtraerDineroComponent } from './pages/extraer-dinero/extraer-dinero.co
     InicioSesionComponent,
     HomeComponent,
     IngresarDineroComponent,
-    ExtraerDineroComponent
+    ExtraerDineroComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

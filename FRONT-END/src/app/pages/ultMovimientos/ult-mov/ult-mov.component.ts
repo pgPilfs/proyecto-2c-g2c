@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ClienteService, Cuenta } from '../../../service/cliente.service';
+import { ClienteService, Cuenta, Movimiento } from '../../../service/cliente.service';
 
 const ID_CUENTA = 'Id-Cuenta'
 
@@ -11,8 +11,10 @@ const ID_CUENTA = 'Id-Cuenta'
 })
 export class UltMovComponent implements OnInit {
   cuenta: Cuenta = new Cuenta();
-  movimientos: any[] = [];
+  movimientos: Movimiento[] = [];
   id_cuenta: number;
+  imagenRetiro: string;
+  imagenIngreso: string;
 
 
   variable: boolean = true;
@@ -28,6 +30,8 @@ export class UltMovComponent implements OnInit {
     })
     this.clienteService.obtenerMovimientos(this.id_cuenta).subscribe((res)=>{
       this.movimientos = res;
+      this.imagenRetiro = "./../assets/img/pngwing.com-menos.png";
+      this.imagenIngreso = "./../assets/img/pngwing.com-mas.png";
       console.log(this.movimientos)
     })
   }

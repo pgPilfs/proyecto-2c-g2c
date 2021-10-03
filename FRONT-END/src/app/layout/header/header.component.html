@@ -10,6 +10,7 @@
         <div class="navbar-nav mr-auto">
             <a *ngIf="!expression" (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/iniciosesion" routerLinkActive="active">Inicio Sesion</a>
             <a *ngIf="!expression" (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/registro" routerLinkActive="active">Registro</a>
+            <a *ngIf="!expression" (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/contacto" routerLinkActive="active">Contacto</a>
             <a *ngIf="expression" (click)="toggleMenu()" (click)="salir()" class="nav-item nav-link btn-lg" routerLink="/bienvenida" routerLinkActive="active">Salir</a>
         </div>
       </div>
