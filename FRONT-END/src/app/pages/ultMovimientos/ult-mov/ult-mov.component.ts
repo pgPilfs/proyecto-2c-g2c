@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ClienteService, Cuenta, Movimiento } from '../../../service/cliente.service';
 import { Router } from '@angular/router';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { ClienteService, Cuenta } from '../../../service/cliente.service';
+
 const ID_CUENTA = 'Id-Cuenta'
 
 @Component({
@@ -34,16 +34,6 @@ export class UltMovComponent implements OnInit {
 
   cambio(){
     this.variable = !this.variable;
-  }
-
-  redirigir(palabra: string){
-    if(palabra == "retirar"){
-      this.router.navigate(['home/retirar'])
-    }else if(palabra == "ingresar"){
-      this.router.navigate(['home/ingresar'])
-    }else if(palabra == "transferir"){
-      this.router.navigate(['home/transferencia'])
-    }
   }
 
 

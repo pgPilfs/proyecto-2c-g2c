@@ -21,7 +21,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { JwtInterceptor } from './service/auth/interceptor.service';
 import { ErrorInterceptor } from './service/auth/error.service';
 import { IngresarDineroComponent } from './pages/ingresar-dinero/ingresos.component';
-import { RetirarDineroComponent } from './pages/retirar-dinero/retirar-dinero.component';
+import { ExtraerDineroComponent } from './pages/extraer-dinero/extraer-dinero.component';
 
 
 
@@ -35,7 +35,7 @@ import { RetirarDineroComponent } from './pages/retirar-dinero/retirar-dinero.co
     InicioSesionComponent,
     HomeComponent,
     IngresarDineroComponent,
-    RetirarDineroComponent,
+    ExtraerDineroComponent
   ],
   imports: [
     BrowserModule,
