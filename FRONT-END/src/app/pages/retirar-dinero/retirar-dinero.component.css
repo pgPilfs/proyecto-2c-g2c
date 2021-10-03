@@ -1,0 +1,34 @@
+h2{
+    color: #fd7a00f6;
+}
+
+input{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+#borde{
+    border: 3px solid;
+    border-color: #fd7a00f6;
+    border-radius: 20px;
+}
+
+#select-medio{
+    border: 3px solid;
+    border-color: #fd7a00f6;
+    border-radius: 5px;
+}
+
+#span-monto{
+    background-color: #fd7a00f6;
+    color: white;
+    border-radius: 5px;
+}
+
+button{
+    background-color: #fd7a00f6;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    color: white
+}

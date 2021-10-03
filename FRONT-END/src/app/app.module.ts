@@ -20,6 +20,8 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { JwtInterceptor } from './service/auth/interceptor.service';
 import { ErrorInterceptor } from './service/auth/error.service';
+import { IngresarDineroComponent } from './pages/ingresar-dinero/ingresos.component';
+import { RetirarDineroComponent } from './pages/retirar-dinero/retirar-dinero.component';
 
 
 
@@ -31,7 +33,9 @@ import { ErrorInterceptor } from './service/auth/error.service';
     UltMovComponent,
     RegisterComponent,
     InicioSesionComponent,
-    HomeComponent
+    HomeComponent,
+    IngresarDineroComponent,
+    RetirarDineroComponent,
   ],
   imports: [
     BrowserModule,
