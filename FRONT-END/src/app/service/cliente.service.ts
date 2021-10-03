@@ -11,17 +11,13 @@ export class ClienteService {
   url2="http://www.webapigcpil.somee.com/api/movimiento";
 
   httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
+    headers: new HttpHeaders({'Content-Type': 'application/json'}),
   }
 
   constructor(private http:HttpClient) { }
 
   onCrearRegistro(usuario:any):Observable<any>{
     return this.http.post<any>(this.url, usuario, this.httpOptions);
-  }
-
-  obtenerUsuarios():Observable<any>{
-    return this.http.get<any>(this.url, this.httpOptions);
   }
 
   obtenerUsuario(id:number):Observable<any>{
@@ -63,8 +59,15 @@ export class Cuenta
 
 
 export class Movimiento {
-  tipoMov: string;
-  monto: string;
-  fechaHora: number;
+  Id: number;
+  Monto: number;
+  fechaHora: string;
+  idTipoMovimiento: number;
   dibujo: string;
+}
+
+export class Login {
+  Email:string="";
+  Password:string="";
+  Token?: string;
 }

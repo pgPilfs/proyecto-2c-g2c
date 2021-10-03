@@ -5,41 +5,50 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { RegistroComponent } from './pages/registro/registro.component';
+
 import { LayoutModule } from './layout/layout.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { PagBienvenidaComponent } from './pages/pag-bienvenida/pag-bienvenida.component';
-import { LoginComponent } from './pages/login/login.component';
 import { UltMovComponent } from './pages/ultMovimientos/ult-mov/ult-mov.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { InicioSesionComponent } from './pages/inicio-sesion/inicio-sesion.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LocalidadService } from './service/localidad.service';
 import { ClienteService } from './service/cliente.service';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { JwtInterceptor } from './service/auth/interceptor.service';
+import { ErrorInterceptor } from './service/auth/error.service';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistroComponent,
     TransferenciaComponent,
     PagBienvenidaComponent,
-    LoginComponent,
     UltMovComponent,
     RegisterComponent,
     InicioSesionComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    RouterModule,
     LayoutModule,
     ReactiveFormsModule,
     FormsModule, 
     HttpClientModule,
   ],
-  providers: [ClienteService, LocalidadService],
+  providers: [
+    LocalidadService,
+    ClienteService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

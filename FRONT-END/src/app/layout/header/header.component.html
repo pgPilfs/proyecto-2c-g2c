@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-md orange navbar-dark">
       <a routerLink="/bienvenida"><span class="navbar-brand">GC PilMoney</span></a>
-      <span class="text-white" *ngIf="expression"><strong>Bienvenido/a {{cliente.Nombre}} {{cliente.Apellido}}</strong></span>
+      <span class="text-white" *ngIf="expression"><strong>Bienvenido/a {{this.email}}</strong></span>
       <button class="navbar-toggler navbar-toggler-right" type="button" aria-controls="appNavigation" aria-expanded="!isCollapsed" aria-label="Toggle navigation" (click)="toggleMenu()">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,7 +10,7 @@
         <div class="navbar-nav mr-auto">
             <a *ngIf="!expression" (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/iniciosesion" routerLinkActive="active">Inicio Sesion</a>
             <a *ngIf="!expression" (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/registro" routerLinkActive="active">Registro</a>
-            <a *ngIf="expression" (click)="salir()" class="nav-item nav-link btn-lg" routerLink="/bienvenida" routerLinkActive="active">Salir</a>
+            <a *ngIf="expression" (click)="toggleMenu()" (click)="salir()" class="nav-item nav-link btn-lg" routerLink="/bienvenida" routerLinkActive="active">Salir</a>
         </div>
       </div>
     </nav>

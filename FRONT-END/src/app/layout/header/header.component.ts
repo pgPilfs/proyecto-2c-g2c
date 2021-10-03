@@ -1,9 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import {filter} from 'rxjs/operators';
-import { DataService } from '../../service/data.service';
-import { ClienteService, Persona } from '../../service/cliente.service';
-import { convertCompilerOptionsFromJson } from 'typescript';
+import { AuthService } from '../../service/auth/auth.service';
+const EMAIL = 'Email'
 
 @Component({
   selector: 'adm-header',
@@ -14,25 +11,28 @@ export class HeaderComponent implements OnInit {
 
   public isCollapsed = true;
   public expression:boolean = false;
-  cliente: Persona;
+  public email: string;
 
   toggleMenu() {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  constructor(private dataService: DataService, private clienteService: ClienteService) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.dataService.bandera$.subscribe((res)=>{
-      this.clienteService.obtenerUsuario(res).subscribe((res2)=>{
-        this.cliente = res2;
+    this.authService.estaAutenticado.subscribe((res)=>{
+      console.log(res);
+      if(res == true){
+        this.email = localStorage.getItem(EMAIL);
+        console.log(this.email);
         this.expression = true;
-      })
+      }
     })
   }
 
   salir(){
     this.expression = false;
+    this.authService.logOut();
   }
 
 

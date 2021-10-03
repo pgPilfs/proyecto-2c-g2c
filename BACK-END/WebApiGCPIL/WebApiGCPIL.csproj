@@ -177,9 +177,12 @@
     <Compile Include="Controllers\CuentaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocalidadController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MovimientoController.cs" />
     <Compile Include="Controllers\PaisController.cs" />
     <Compile Include="Controllers\ProvinciaController.cs" />
+    <Compile Include="Controllers\TokenGenerator.cs" />
+    <Compile Include="Controllers\TokenValidationHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,9 +195,12 @@
     <Compile Include="Models\GestorPais.cs" />
     <Compile Include="Models\GestorProvincia.cs" />
     <Compile Include="Models\Localidad.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Movimiento.cs" />
     <Compile Include="Models\Pais.cs" />
     <Compile Include="Models\Provincia.cs" />
+    <Compile Include="Models\Respuesta.cs" />
+    <Compile Include="Models\TokenResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,6 @@ export class RegistroService {
   registro(cliente: Usuario ){
     delete this.registrado;
     for(const usuario of this.clientes){
-      debugger
       if(usuario.mail === cliente.mail){
         this.registrado = true;
         break

@@ -5,15 +5,16 @@ using WebApiGCPIL.Models;
 
 namespace WebApiGCPIL.Controllers
 {
+    [Authorize]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ClienteController : ApiController
     {
         // GET: api/Cliente
-        public IEnumerable<Cliente> Get()
-        {
-            GestorCliente gestorCliente = new GestorCliente();
-            return gestorCliente.BuscarClientes();
-        }
+        //public IEnumerable<Cliente> Get()
+        //{
+        //    GestorCliente gestorCliente = new GestorCliente();
+        //    return gestorCliente.BuscarClientes();
+        //}
 
         // GET: api/Cliente/5
         public Cliente Get(int id)

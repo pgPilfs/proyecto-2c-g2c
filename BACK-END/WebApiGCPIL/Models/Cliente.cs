@@ -29,7 +29,7 @@ namespace WebApiGCPIL.Models
         }
 
 
-        public Cliente(int id, string nombre, string apellido, string email, string domicilio, int idLocalidad, int dni, System.DateTime fechaNacimiento,int idCuenta , string cuil, string genero, string nacionalidad,string contrasena,  byte fotoDniFrente = 0, byte fotoDniDorso = 0)
+        public Cliente(int id, string nombre, string apellido, string email, string domicilio, int idLocalidad, int dni, System.DateTime fechaNacimiento,int idCuenta , string cuil, string genero, string nacionalidad,string contrasena= null,  byte fotoDniFrente = 0, byte fotoDniDorso = 0)
         {
             Id = id;
             Nombre = nombre;
@@ -39,11 +39,11 @@ namespace WebApiGCPIL.Models
             IdLocalidad = idLocalidad;
             Dni = dni;
             IdCuenta = idCuenta;
-            Contrasena = contrasena;
             FechaNacimiento = fechaNacimiento;
             Cuil = cuil;
             Genero = genero;
             Nacionalidad = nacionalidad;
+            Contrasena = contrasena;
             FotoDniFrente = fotoDniFrente;
             FotoDniDorso = fotoDniDorso;
             

@@ -32,7 +32,7 @@ namespace WebApiGCPIL.Models
                     string nombre = dr.GetString(1).Trim();
                     string apellido = dr.GetString(2).Trim();
                     string email = dr.GetString(3).Trim();
-                    string contrasena = dr.GetString(4).Trim();
+                    //no retornamos contraseña
                     string domicilio = dr.GetString(5).Trim();
                     int idLocalidad = dr.GetInt32(6);
                     int dni = dr.GetInt32(7);
@@ -42,7 +42,7 @@ namespace WebApiGCPIL.Models
                     string genero = dr.GetString(11).Trim();
                     string nacionalidad = dr.GetString(12).Trim();
 
-                    cliente = new Cliente(id, nombre, apellido, email, domicilio, idLocalidad, dni, fechaNacimiento, idCuenta, cuit, genero, nacionalidad, contrasena);
+                    cliente = new Cliente(id, nombre, apellido, email, domicilio, idLocalidad, dni, fechaNacimiento, idCuenta, cuit, genero, nacionalidad);
                 }
 
                 dr.Close();
@@ -52,48 +52,48 @@ namespace WebApiGCPIL.Models
             return cliente;
         }
 
-        public List<Cliente> BuscarClientes()
-        {
-            List<Cliente> lista = new List<Cliente>();
-            string connection = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
+        //public List<Cliente> BuscarClientes()
+        //{
+        //    List<Cliente> lista = new List<Cliente>();
+        //    string connection = ConfigurationManager.ConnectionStrings["BDLocal"].ToString();
 
-            using (SqlConnection conn = new SqlConnection(connection))
-            {
-                conn.Open();
+        //    using (SqlConnection conn = new SqlConnection(connection))
+        //    {
+        //        conn.Open();
 
-                SqlCommand comm = conn.CreateCommand();
-                comm.CommandText = "listar_clientes";
-                comm.CommandType = CommandType.StoredProcedure;
+        //        SqlCommand comm = conn.CreateCommand();
+        //        comm.CommandText = "listar_clientes";
+        //        comm.CommandType = CommandType.StoredProcedure;
 
-                SqlDataReader dr = comm.ExecuteReader();
+        //        SqlDataReader dr = comm.ExecuteReader();
 
-                while (dr.Read())
-                {
-                    int id = dr.GetInt32(0);
-                    string nombre = dr.GetString(1).Trim();
-                    string apellido = dr.GetString(2).Trim();
-                    string email = dr.GetString(3).Trim();
-                    string contrasena = dr.GetString(4).Trim();
-                    string domicilio = dr.GetString(5).Trim();
-                    int idLocalidad = dr.GetInt32(6);
-                    int dni = dr.GetInt32(7);
-                    DateTime fechaNacimiento = dr.GetDateTime(8);
-                    int idCuenta = dr.GetInt32(9);
-                    string cuit = dr.GetString(10).Trim();
-                    string genero = dr.GetString(11).Trim();
-                    string nacionalidad = dr.GetString(12).Trim();
+        //        while (dr.Read())
+        //        {
+        //            int id = dr.GetInt32(0);
+        //            string nombre = dr.GetString(1).Trim();
+        //            string apellido = dr.GetString(2).Trim();
+        //            string email = dr.GetString(3).Trim();
+        //            string contrasena = dr.GetString(4).Trim();
+        //            string domicilio = dr.GetString(5).Trim();
+        //            int idLocalidad = dr.GetInt32(6);
+        //            int dni = dr.GetInt32(7);
+        //            DateTime fechaNacimiento = dr.GetDateTime(8);
+        //            int idCuenta = dr.GetInt32(9);
+        //            string cuit = dr.GetString(10).Trim();
+        //            string genero = dr.GetString(11).Trim();
+        //            string nacionalidad = dr.GetString(12).Trim();
 
-                    Cliente cliente = new Cliente(id, nombre, apellido, email, domicilio, idLocalidad, dni, fechaNacimiento, idCuenta, cuit, genero, nacionalidad, contrasena);
-                    lista.Add(cliente);
-                }
+        //            Cliente cliente = new Cliente(id, nombre, apellido, email, domicilio, idLocalidad, dni, fechaNacimiento, idCuenta, cuit, genero, nacionalidad, contrasena);
+        //            lista.Add(cliente);
+        //        }
 
-                dr.Close();
-            }
+        //        dr.Close();
+        //    }
 
-            return lista;
+        //    return lista;
 
 
-        }
+        //}
 
         public int InsertarCliente(Cliente cliente)
         {

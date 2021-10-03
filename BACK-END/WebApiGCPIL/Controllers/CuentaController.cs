@@ -9,6 +9,7 @@ using WebApiGCPIL.Models;
 
 namespace WebApiGCPIL.Controllers
 {
+    [Authorize]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CuentaController : ApiController
     {
