@@ -1,0 +1,13 @@
+input[type="number"]
+{
+    -webkit-appearance: textfield !important;
+    margin: 0;
+    -moz-appearance:textfield !important;
+}
+
+.bg{
+    background-image: url(./img/imagenTransferencia.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

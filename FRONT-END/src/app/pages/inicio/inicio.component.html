@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md orange navbar-dark">
+    <button class="navbar-toggler navbar-toggler-right" type="button" aria-controls="appNavigation" aria-expanded="!isCollapsed" aria-label="Toggle navigation" (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse alineado text-center" id="appNavigation" [ngbCollapse]="isCollapsed">
+        <div class="navbar-nav mr-auto" *ngIf="blnDisplayMenu">
+
+            <a (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/saldo" routerLinkActive="active">Consultar Saldo</a>
+            <a (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/ingreso" routerLinkActive="active">Ingresar Dinero</a>
+            <a (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/extraer" routerLinkActive="active">Extraer Dinero</a>
+            <a (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/transferencias" routerLinkActive="active">Transferencias</a>
+            <a (click)="toggleMenu()" class="nav-item nav-link btn-lg" routerLink="/soporte" routerLinkActive="active">Soporte Técnico</a>
+
+
+            <div class="nav-item dropdown" ngbDropdown>
+                <a class="nav-link dropdown-toggle btn-lg" id="dropdownSede" ngbDropdownToggle>Otras Funciones</a>
+                <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownSede">
+                    <a class="dropdown-item" routerLink="/" (click)="toggleMenu()">Giro al descubierto</a>
+                    <a class="dropdown-item" routerLink="/" (click)="toggleMenu()">Pago Servicios</a>
+                    <a class="dropdown-item" routerLink="/" (click)="toggleMenu()">Compra/Venta Dólares</a>
+                    <a class="dropdown-item" routerLink="/" (click)="toggleMenu()">Criptomonedas</a>
+                    <a class="dropdown-item" routerLink="/" (click)="toggleMenu()">Seguros</a>
+                    <a class="dropdown-item" routerLink="/" (click)="toggleMenu()">Préstamos</a>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</nav>

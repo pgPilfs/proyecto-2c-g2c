@@ -1,76 +1,79 @@
-<div class="bg pt-5 pb-5">
+<div class="bg">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 mx-auto">
-
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 mx-auto">
                 <div class="card_transferencia mt-5 mb-5">
                     <div class="card">
                         <div class="card-body text-center">
                             <h1 class="card-title pb-3">Transferencia</h1>
                             <form [formGroup]="transferForm" (ngSubmit)="enviar(transferForm.value)">
 
-
                                 <div class="form-row">
                                     <!--Campo CBU-->
                                     <div class="form-group col-md-6">
                                         <label>CBU/CVU</label>
-                                        <input class="form-control" formControlName="cbu" type="number" style="color: white;" />
+                                        <input class="form-control" formControlName="cbu" type="number" />
+
                                         <!--Validacion CBU requerido-->
                                         <div class="text-danger" *ngIf="transferForm.get('cbu').hasError('required') && transferForm.get('cbu').touched ">
-                                            El CBU es necesario.
+                                            El CBU es necesario
                                         </div>
+
                                         <!--Validacion que solicita un dni valido-->
                                         <div class="text-danger" *ngIf="transferForm.get('cbu').hasError('min')">
-                                            Ingrese en CBU válido.
+                                            Ingrese en CBU valido
                                         </div>
-                                    </div>
 
+                                    </div>
 
                                     <!--Campo monto-->
                                     <div class=" form-group col-md-6">
-                                        <label>Monto en $: </label>
-                                        <input class="form-control" type="number" formControlName="monto" style="color: white;" />
+                                        <label>Dinero a transferir</label>
+                                        <input class="form-control" type="number" formControlName="monto" placeholder="Monto" />
 
                                         <!--Validaciones dinero requerido-->
                                         <div class="text-danger" *ngIf="transferForm.get('monto').hasError('required') && transferForm.get('monto').touched ">
-                                            El monto es necesario.
+                                            El monto es necesario
                                         </div>
+
                                         <!--Validacion monto minimo-->
-                                        <div class="text-danger" *ngIf="transferForm.get('monto').hasError('min')">Ingrese un monto válido.</div>
+                                        <div class="text-danger" *ngIf="transferForm.get('monto').hasError('min')">Ingrese un monto valido</div>
+
                                         <!--Validacion monto maximo a transaccionar-->
-                                        <div class="text-danger" *ngIf="transferForm.get('monto').hasError('max')">No se puede transferir este monto. Consulte con atención al cliente.</div>
-                                        <!--Validacion que el monto a transferir tengamos disponibles en nuestro saldo-->
-                                        <div class="text-danger" *ngIf="excedeSaldo">{{textoIncorrecto}}</div>
+                                        <div class="text-danger" *ngIf="transferForm.get('monto').hasError('max')">No se puede transferir este monto. Consulte con atencion al cliente</div>
+
                                     </div>
                                 </div>
                                 <br>
 
                                 <!--Campo Email-->
-                                <label>E-mail del destinatario:</label>
-                                <input class="form-control" style="color: white;" type="email" formControlName="mail" />
+                                <label>Mail del destinatario</label>
+                                <input class="form-control" type="email" formControlName="mail" placeholder="E-mail" />
+
                                 <!--Validaciones mail requerido-->
                                 <div class="text-danger" *ngIf="transferForm.get('mail').hasError('required') && transferForm.get('mail').touched ">
-                                    El e-mail es necesario.
+                                    El mail es necesario
                                 </div>
+
                                 <!--Validacion formato mail-->
                                 <div class="text-danger" *ngIf="transferForm.get('mail').hasError('email') && transferForm.get('mail').touched">
-                                    Ingrese un e-mail valido.
+                                    Ingrese un mail valido
                                 </div>
                                 <br>
 
                                 <!--Campo Motivo-->
                                 <div class="form-group">
-                                    <label>Motivo:</label>
+                                    <label>Motivo</label>
                                     <select class="form-control" aria-label="Default select example" required>
-                                    <option>Inmuebles</option>
+                                    <option>Varios</option>
                                     <option>Expensas</option>
                                     <option>Alquiler</option>
-                                    <option>Varios</option>
                                 </select>
                                 </div>
 
                                 <!--Campo Boton-->
-                                <button class="btn btn-dark w-50" [disabled]="transferForm.invalid" (click)="validarCantidad()">Transferir</button>
+                                <button class="btn btn-primary" [disabled]="transferForm.invalid">Transferir</button>
+
                             </form>
                         </div>
                     </div>

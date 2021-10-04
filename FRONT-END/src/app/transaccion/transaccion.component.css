@@ -1,41 +1,60 @@
-input[type="number"]
-{
+input[type="number"] {
     -webkit-appearance: textfield !important;
     margin: 0;
-    -moz-appearance:textfield !important;
+    -moz-appearance: textfield !important;
 }
 
-.bg{
+.bg {
     background-image: url(./img/imagenTransferencia.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.card{
-    background-color: rgba(245,245,245,0.1);
+.card {
+    background-color: rgba(245, 245, 245, 0.1);
     border-radius: 2.5rem;
 }
 
-input, select{
+input,
+select {
     background-color: rgba(255, 255, 255, 0.1);
     border: none;
     text-align: center;
     color: white;
-    border-radius:0.5rem;
+    border-radius: 0.5rem;
 }
-input:focus{
+
+input:focus {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-label{ 
+label {
     color: white;
 }
 
 ::placeholder {
     color: rgba(255, 255, 255, 0.6);
-  } 
+}
 
-  h1, p{
-      color: white;
-  }
+h1,
+p {
+    color: white;
+}
+
+button {
+    background-color: #EB7329;
+    border: none;
+    border-radius: 5rem;
+    padding: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+button:disabled {
+    background-color: #EB7329;
+}
+
+label {
+    font-size: 20px;
+    color: white;
+}

@@ -8,10 +8,8 @@
                             <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value)">
                                 <h1 class="m-2">Registrate</h1>
                                 <p class="mb-4">Es simple, fácil y gratis.</p>
-
                                 <!--Nombre-->
-                                <p>Nombre:</p>
-                                <input formControlName="nombre" type="text" class="form-control input">
+                                <input formControlName="nombre" type="text" class="form-control input" placeholder="Nombre">
                                 <!--Nombre validaciones-->
                                 <div class="text-danger" *ngIf="signupForm.get('nombre').hasError('required') && signupForm.get('nombre').touched">
                                     Ingrese el nombre
@@ -19,8 +17,7 @@
                                 <br>
 
                                 <!--Apellido-->
-                                <p>Apellido:</p>
-                                <input formControlName="apellido" type="text" class="form-control">
+                                <input formControlName="apellido" type="text" class="form-control" placeholder="Apellido">
                                 <!--Apellido validaciones-->
                                 <div class="text-danger" *ngIf="signupForm.get('apellido').hasError('required') && signupForm.get('apellido').touched">
                                     Ingrese el apellido
@@ -28,24 +25,13 @@
                                 <br>
 
                                 <!--DNI-->
-                                <p>N° DNI:</p>
-                                <input formControlName="dni" type="number" class="form-control">
+                                <input formControlName="dni" type="number" class="form-control" placeholder="DNI">
                                 <!--DNI validaciones-->
                                 <div class="text-danger" *ngIf="signupForm.get('dni').hasError('required') && signupForm.get('dni').touched">
                                     El dni es requerido</div>
                                 <br>
 
-                                <!--FECHA DE NACIMIENTO-->
-                                <p>Fecha de nacimiento</p>
-                                <input type="date" id="fecha_nacimiento" class="form-control" formControlName="fechaNacimiento">
-                                <!--validaciones-->
-                                <div class="text-danger" *ngIf="signupForm.get('fechaNacimiento').hasError('minlength') && signupForm.get('fechaNacimiento').dirty && signupForm.get('fechaNacimiento').touched">
-                                    La fecha de nacimiento es requerida.
-                                </div>
-                                <br>
-
                                 <!--Mail-->
-
                                 <input formControlName="email" type="email" class="form-control" placeholder="E-mail">
                                 <!--Mail validaciones-->
                                 <div class="text-danger" *ngIf="signupForm.get('email').hasError('required') && signupForm.get('email').touched">
@@ -64,8 +50,6 @@
                                 <div class="text-danger" *ngIf="signupForm.get('clave').hasError('minlength') && signupForm.get('clave').dirty && signupForm.get('clave').touched">
                                     Debe contener al menos: 1 N°, 1 Mayúscula y 8 o + caracteres.
                                 </div>
-
-
                                 <br>
                                 <input formControlName="clave2" type="password" class="form-control" placeholder="Reingrese la contraseña">
                                 <div class="text-danger" *ngIf="signupForm.get('clave2').hasError('required') && signupForm.get('clave2').touched">
